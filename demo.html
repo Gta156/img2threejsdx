@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cyber-Bot Vehicle — Live Three.js Procedural Model</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #111115;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    #canvas-container {
+      width: 100vw;
+      height: 100vh;
+      display: block;
+    }
+    #info-panel {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(26, 26, 32, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 105, 180, 0.3);
+      border-radius: 12px;
+      padding: 16px 20px;
+      color: #fff;
+      max-width: 320px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      z-index: 10;
+    }
+    h1 {
+      margin: 0 0 6px 0;
+      font-size: 16px;
+      color: #FF69B4;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    p {
+      margin: 0 0 10px 0;
+      font-size: 12px;
+      line-height: 1.4;
+      color: #ccc;
+    }
+    .badge {
+      display: inline-block;
+      background: #FF2A85;
+      color: #fff;
+      font-size: 10px;
+      font-weight: bold;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .controls-hint {
+      font-size: 11px;
+      color: #888;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 8px;
+    }
+  </style>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/examples/jsm/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="info-panel">
+    <h1><span>Cyber-Bot Vehicle</span> <span class="badge">Ultra-Complex</span></h1>
+    <p>Animation-ready procedural Three.js model rebuilt from the Killstore render.</p>
+    <div class="controls-hint">
+      <strong>Left-click + Drag:</strong> Orbit camera<br/>
+      <strong>Right-click + Drag:</strong> Pan<br/>
+      <strong>Scroll:</strong> Zoom in/out
+    </div>
+  </div>
+  <div id="canvas-container"></div>
+
+  <script type="module">
+    import * as THREE from 'three';
+    import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
+    import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+
+    // 1. Scene & Camera setup
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color('#141419');
+
+    const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.set(0, 1.8, 4.5);
+    camera.lookAt(0, 0.2, 0);
+
+    const container = document.getElementById('canvas-container');
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.shadowMap.enabled = true;
+    container.appendChild(renderer.domElement);
+
+    // 2. Lighting & Environment
+    const pmrem = new THREE.PMREMGenerator(renderer);
+    scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+
+    const hemi = new THREE.HemisphereLight(0xffffff, 0x333333, 0.8);
+    hemi.position.set(0, 10, 0);
+    scene.add(hemi);
+
+    const keyLight = new THREE.DirectionalLight(0xffffff, 1.4);
+    keyLight.position.set(3, 5, 4);
+    keyLight.castShadow = true;
+    scene.add(keyLight);
+
+    const fillLight = new THREE.DirectionalLight(0xffb6c1, 0.6);
+    fillLight.position.set(-4, 3, -2);
+    scene.add(fillLight);
+
+    // 3. Load procedural model module dynamically
+    import('./dist/createCyberBotVehicleModel.js').then((mod) => {
+      const { createCyberBotVehicleModel } = mod;
+      const botVehicle = createCyberBotVehicleModel({ qualityPriority: 'reference-fidelity' });
+      scene.add(botVehicle);
+    });
+
+    // 4. Controls
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.target.set(0, 0.2, 0);
+    controls.minDistance = 1.5;
+    controls.maxDistance = 8.0;
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    function animate() {
+      requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    }
+    animate();
+  </script>
+</body>
+</html>
