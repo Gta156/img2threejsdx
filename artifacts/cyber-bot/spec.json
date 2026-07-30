@@ -1,0 +1,11 @@
+{
+  "name": "Cyber-Bot Vehicle",
+  "image": "references/Screenshot 2026-07-30 165911.png",
+  "domain": "hard-surface object",
+  "tier": "ultra-complex",
+  "factory": "createCyberBotVehicleModel",
+  "hierarchy": {"root":["stage-platform","chassis"],"chassis":["face-screen","ears","headphones","chest-ring","bumper","radio-module","wheels"],"wheels":["FL","FR","RL","RR"]},
+  "materials": {"body":{"color":"#EE98B9","finish":"satin"},"pinkEmissive":"#FF2A85","whiteEmissive":"#FFFFFF","silver":"#D1D5DB","rubber":"#1C1C1E"},
+  "detailInventory": ["stage-disc","stage-inset","body-shell","roof-panel","face-bezel","eye-left","eye-right","mouth","ear-left","ear-right","headband","earcups","chest-ring","bumper","grilles","radio-box","antenna-a","antenna-b","wheel-tires","wheel-rims"],
+  "passes": ["blockout","structural","form","material","lighting"]
+}

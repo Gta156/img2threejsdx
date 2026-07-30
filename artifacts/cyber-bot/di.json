@@ -1,0 +1,107 @@
+{
+  "tier": "ultra-complex",
+  "detailCount": 20,
+  "details": [
+    {
+      "id": "stage-disc",
+      "component": "stage-platform",
+      "description": "white circular presentation plinth with pink rim"
+    },
+    {
+      "id": "stage-inset",
+      "component": "stage-platform",
+      "description": "recessed lavender center disc"
+    },
+    {
+      "id": "body-shell",
+      "component": "chassis",
+      "description": "rounded pastel-pink cuboid vehicle shell"
+    },
+    {
+      "id": "roof-panel",
+      "component": "chassis",
+      "description": "raised roof panel"
+    },
+    {
+      "id": "face-bezel",
+      "component": "face-screen",
+      "description": "silver-edged rounded black face screen"
+    },
+    {
+      "id": "eye-left",
+      "component": "face-screen",
+      "description": "white emissive left circular eye"
+    },
+    {
+      "id": "eye-right",
+      "component": "face-screen",
+      "description": "white emissive right circular eye"
+    },
+    {
+      "id": "mouth",
+      "component": "face-screen",
+      "description": "pink three-stroke cat mouth"
+    },
+    {
+      "id": "ear-left",
+      "component": "ears",
+      "description": "triangular pink ear with bright inner triangle"
+    },
+    {
+      "id": "ear-right",
+      "component": "ears",
+      "description": "triangular pink ear with bright inner triangle"
+    },
+    {
+      "id": "headband",
+      "component": "headphones",
+      "description": "arched silver/pink headphone band"
+    },
+    {
+      "id": "earcups",
+      "component": "headphones",
+      "description": "layered circular side earcups"
+    },
+    {
+      "id": "chest-ring",
+      "component": "chest-ring",
+      "description": "large glowing pink subwoofer ring"
+    },
+    {
+      "id": "bumper",
+      "component": "bumper",
+      "description": "front bumper rail and corner blocks"
+    },
+    {
+      "id": "grilles",
+      "component": "bumper",
+      "description": "round grille knobs and slim lower grille"
+    },
+    {
+      "id": "radio-box",
+      "component": "radio-module",
+      "description": "side radio casing and vertical grille"
+    },
+    {
+      "id": "antenna-a",
+      "component": "radio-module",
+      "description": "rear antenna with silver mast"
+    },
+    {
+      "id": "antenna-b",
+      "component": "radio-module",
+      "description": "second antenna with silver mast"
+    },
+    {
+      "id": "wheel-tires",
+      "component": "wheels",
+      "description": "four black rubber tires"
+    },
+    {
+      "id": "wheel-rims",
+      "component": "wheels",
+      "description": "four silver spoke rim assemblies"
+    }
+  ],
+  "allMappedToGeometry": true
+}

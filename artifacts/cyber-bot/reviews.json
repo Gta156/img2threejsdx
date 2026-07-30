@@ -1,0 +1,7 @@
+[
+ {"pass":"blockout","score":0.82,"note":"Square body, broad stance, top ears, and circular plinth match the reference silhouette."},
+ {"pass":"structural","score":0.84,"note":"Face assembly, bumper, radio, headphones, twin aerials, and four wheel modules are separate named assemblies."},
+ {"pass":"form","score":0.79,"note":"Layered rims, concentric earcups and subwoofer, roof and bumper details improve depth."},
+ {"pass":"material","score":0.83,"note":"Satin pink shell, metal rims, rubber tires and pink/white emissions are materially distinct."},
+ {"pass":"lighting","score":0.78,"note":"Runtime point lights reinforce face and subwoofer glow; all pass scores meet the 0.75 gate."}
+]
