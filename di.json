@@ -1,0 +1,451 @@
+{
+  "sourceImage": "reference.png",
+  "zonesDir": "zones",
+  "detailInventory": {
+    "scanMethod": "grid-3x3",
+    "targetMinDetails": 16,
+    "details": [
+      {
+        "id": "detail-face-bezel",
+        "kind": "contour",
+        "description": "Dark rounded rectangular face bezel with soft bevel encasing screen",
+        "region": {
+          "x": 0.35,
+          "y": 0.18,
+          "width": 0.28,
+          "height": 0.24,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "silhouette",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "face-screen/bezel-curvature"
+        },
+        "evidenceRef": "zones/zone-r0c1.png",
+        "confidence": 0.96
+      },
+      {
+        "id": "detail-cat-eyes",
+        "kind": "emissive",
+        "description": "Glowing white cat eyes with vertical slit pupils on black screen",
+        "region": {
+          "x": 0.38,
+          "y": 0.28,
+          "width": 0.22,
+          "height": 0.1,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "emissive",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "face-screen/cat-eyes"
+        },
+        "evidenceRef": "zones/zone-r0c1.png",
+        "confidence": 0.97
+      },
+      {
+        "id": "detail-cat-mouth",
+        "kind": "emissive",
+        "description": "Minimalist white caret '^' mouth below cat eyes",
+        "region": {
+          "x": 0.46,
+          "y": 0.38,
+          "width": 0.06,
+          "height": 0.04,
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "emissive",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "face-screen/mouth-caret"
+        },
+        "evidenceRef": "zones/zone-r0c1.png",
+        "confidence": 0.92
+      },
+      {
+        "id": "detail-ear-left-outer",
+        "kind": "contour",
+        "description": "Left triangular cat ear with pink satin body shell, pointed tip",
+        "region": {
+          "x": 0.35,
+          "y": 0.05,
+          "width": 0.12,
+          "height": 0.16,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "silhouette",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "ears-left/outer-triangle"
+        },
+        "evidenceRef": "zones/zone-r0c0.png",
+        "confidence": 0.95
+      },
+      {
+        "id": "detail-ear-right-outer",
+        "kind": "contour",
+        "description": "Right triangular cat ear mirror of left with pink body",
+        "region": {
+          "x": 0.59,
+          "y": 0.05,
+          "width": 0.12,
+          "height": 0.16,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "silhouette",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "ears-right/outer-triangle"
+        },
+        "evidenceRef": "zones/zone-r0c2.png",
+        "confidence": 0.95
+      },
+      {
+        "id": "detail-ear-inner-pads",
+        "kind": "emissive",
+        "description": "Hot-pink emissive inner triangular pads inside cat ears #FF2A85 intensity 2.2",
+        "region": {
+          "x": 0.38,
+          "y": 0.08,
+          "width": 0.08,
+          "height": 0.09,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "emissive",
+        "mapsTo": {
+          "type": "material.localOverrides",
+          "ref": "emissive-pink-white/inner-pad-glow"
+        },
+        "evidenceRef": "zones/zone-r0c1.png",
+        "confidence": 0.94
+      },
+      {
+        "id": "detail-headband",
+        "kind": "contour",
+        "description": "Thick arching overhead headband connecting earcups, pink satin with center seam",
+        "region": {
+          "x": 0.36,
+          "y": 0.12,
+          "width": 0.32,
+          "height": 0.14,
+          "units": "normalized"
+        },
+        "scale": "macro",
+        "affects": "silhouette",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "headphones/headband-arch"
+        },
+        "evidenceRef": "zones/zone-r0c1.png",
+        "confidence": 0.96
+      },
+      {
+        "id": "detail-earcup-left",
+        "kind": "bevel",
+        "description": "Left oversized cylindrical side earcup with silver outer rim",
+        "region": {
+          "x": 0.28,
+          "y": 0.22,
+          "width": 0.11,
+          "height": 0.18,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "specular",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "earcup-left/outer-rim"
+        },
+        "evidenceRef": "zones/zone-r1c0.png",
+        "confidence": 0.95
+      },
+      {
+        "id": "detail-earcup-right",
+        "kind": "bevel",
+        "description": "Right oversized earcup mirror with silver rim",
+        "region": {
+          "x": 0.62,
+          "y": 0.22,
+          "width": 0.11,
+          "height": 0.18,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "specular",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "earcup-right/outer-rim"
+        },
+        "evidenceRef": "zones/zone-r1c2.png",
+        "confidence": 0.95
+      },
+      {
+        "id": "detail-earcup-badges",
+        "kind": "emissive",
+        "description": "Glowing pink center hexagon logo badges on side earcups with inner ring",
+        "region": {
+          "x": 0.29,
+          "y": 0.27,
+          "width": 0.09,
+          "height": 0.09,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "emissive",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "earcup-left/badge-hex-glow"
+        },
+        "evidenceRef": "zones/zone-r1c0.png",
+        "confidence": 0.91
+      },
+      {
+        "id": "detail-chest-speaker-ring",
+        "kind": "emissive",
+        "description": "Concentric glowing pink chest subwoofer ring #FF2A85 emissiveIntensity 2.2 around black speaker",
+        "region": {
+          "x": 0.36,
+          "y": 0.46,
+          "width": 0.18,
+          "height": 0.18,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "emissive",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "chest-ring/pink-glow-ring"
+        },
+        "evidenceRef": "zones/zone-r1c1.png",
+        "confidence": 0.96
+      },
+      {
+        "id": "detail-speaker-cone",
+        "kind": "groove",
+        "description": "Black speaker cone with central dome and perforated fabric mesh",
+        "region": {
+          "x": 0.38,
+          "y": 0.48,
+          "width": 0.14,
+          "height": 0.14,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "normal",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "chest-ring/speaker-cone-fabric"
+        },
+        "evidenceRef": "zones/zone-r1c1.png",
+        "confidence": 0.89
+      },
+      {
+        "id": "detail-bumper-knobs",
+        "kind": "bevel",
+        "description": "Twin circular silver metallic headlight/knobs flanking chest speaker",
+        "region": {
+          "x": 0.32,
+          "y": 0.55,
+          "width": 0.06,
+          "height": 0.06,
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "specular",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "bumper/knob-left-specular"
+        },
+        "evidenceRef": "zones/zone-r1c1.png",
+        "confidence": 0.9
+      },
+      {
+        "id": "detail-bumper-grilles",
+        "kind": "groove",
+        "description": "Two lower rectangular silver speaker grilles on front bumper with horizontal slats",
+        "region": {
+          "x": 0.34,
+          "y": 0.62,
+          "width": 0.24,
+          "height": 0.07,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "normal",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "bumper/grille-left-slats"
+        },
+        "evidenceRef": "zones/zone-r2c1.png",
+        "confidence": 0.91
+      },
+      {
+        "id": "detail-radio-module",
+        "kind": "contour",
+        "description": "Tactical walkie-talkie radio receiver module on right side panel, dark gray",
+        "region": {
+          "x": 0.61,
+          "y": 0.38,
+          "width": 0.1,
+          "height": 0.18,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "silhouette",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "radio-module/box-tactical"
+        },
+        "evidenceRef": "zones/zone-r1c2.png",
+        "confidence": 0.92
+      },
+      {
+        "id": "detail-radio-switches",
+        "kind": "bevel",
+        "description": "Small toggle switches and knobs on radio module side",
+        "region": {
+          "x": 0.64,
+          "y": 0.4,
+          "width": 0.04,
+          "height": 0.12,
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "specular",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "radio-module/toggle-switches"
+        },
+        "evidenceRef": "zones/zone-r1c2.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "detail-radio-antennas",
+        "kind": "contour",
+        "description": "Dual vertical whip antennas with ball tips on radio module top",
+        "region": {
+          "x": 0.61,
+          "y": 0.28,
+          "width": 0.04,
+          "height": 0.15,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "silhouette",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "radio-module/antenna-dual"
+        },
+        "evidenceRef": "zones/zone-r0c2.png",
+        "confidence": 0.93
+      },
+      {
+        "id": "detail-wheels-tires",
+        "kind": "contour",
+        "description": "Four wide black rubber tires #1C1C1E roughness 0.85 with deep tread",
+        "region": {
+          "x": 0.22,
+          "y": 0.58,
+          "width": 0.16,
+          "height": 0.22,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "silhouette",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "wheel-FL/tire-tread"
+        },
+        "evidenceRef": "zones/zone-r2c0.png",
+        "confidence": 0.96
+      },
+      {
+        "id": "detail-wheels-rims",
+        "kind": "bevel",
+        "description": "Silver 6-spoke star rims #D1D5DB metalness 0.85 roughness 0.22 with lug nuts",
+        "region": {
+          "x": 0.24,
+          "y": 0.62,
+          "width": 0.12,
+          "height": 0.14,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "specular",
+        "mapsTo": {
+          "type": "material.localOverrides",
+          "ref": "spoke-star-pattern"
+        },
+        "evidenceRef": "zones/zone-r2c0.png",
+        "confidence": 0.94
+      },
+      {
+        "id": "detail-stage-platform",
+        "kind": "contour",
+        "description": "Layered circular pink and white stage display disc with 5 concentric rings beneath wheels",
+        "region": {
+          "x": 0.08,
+          "y": 0.65,
+          "width": 0.84,
+          "height": 0.32,
+          "units": "normalized"
+        },
+        "scale": "macro",
+        "affects": "silhouette",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "stage-platform/concentric-rings"
+        },
+        "evidenceRef": "zones/zone-r2c1.png",
+        "confidence": 0.96
+      },
+      {
+        "id": "detail-body-gloss",
+        "kind": "gloss",
+        "description": "Satin pastel pink plastic body #EE98B9 with clearcoat 0.2 satin sheen and panel seams",
+        "region": {
+          "x": 0.32,
+          "y": 0.38,
+          "width": 0.38,
+          "height": 0.32,
+          "units": "normalized"
+        },
+        "scale": "macro",
+        "affects": "specular",
+        "mapsTo": {
+          "type": "material.localOverrides",
+          "ref": "pink-body-shell/pink-satin-clearcoat"
+        },
+        "evidenceRef": "zones/zone-r1c1.png",
+        "confidence": 0.95
+      },
+      {
+        "id": "detail-side-leds",
+        "kind": "emissive",
+        "description": "Small pink emissive accent strips along side panels and fenders",
+        "region": {
+          "x": 0.55,
+          "y": 0.48,
+          "width": 0.08,
+          "height": 0.04,
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "emissive",
+        "mapsTo": {
+          "type": "material.localOverrides",
+          "ref": "emissive-pink-white/side-led-strips"
+        },
+        "evidenceRef": "zones/zone-r1c2.png",
+        "confidence": 0.85
+      }
+    ]
+  },
+  "authoringInstruction": "Map all details to component.localFeatures or material.localOverrides for validation"
+}

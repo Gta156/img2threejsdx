@@ -1,0 +1,6508 @@
+{
+  "targetName": "Pink Cat-Eared Cyber-Bot Vehicle",
+  "targetId": "pink-cat-eared-cyber-bot-vehicle",
+  "schemaVersion": "2.1",
+  "sourceImage": "reference.png",
+  "referenceCamera": {
+    "solved": true,
+    "fovDegrees": 40,
+    "aspect": 1.7916,
+    "orientation": {
+      "yaw": 25,
+      "pitch": 12,
+      "roll": 0
+    },
+    "positionHint": [
+      0,
+      1.5,
+      4
+    ],
+    "position": [
+      2.2,
+      1.2,
+      2.0
+    ],
+    "target": [
+      0,
+      0,
+      0
+    ]
+  },
+  "suitability": "pass",
+  "scores": {
+    "object_isolation": 3,
+    "silhouette_readability": 3,
+    "depth_inference": 3,
+    "primitive_decomposition": 3,
+    "material_procedurality": 3,
+    "occlusion_risk": 2,
+    "interaction_fit": 3
+  },
+  "preSpecAssessment": {
+    "objectClass": {
+      "primaryType": "robot-vehicle",
+      "primaryDomain": "object",
+      "formLanguage": [
+        "rounded-box-chassis",
+        "circular-stage",
+        "cylindrical-earcups",
+        "triangular-cat-ears",
+        "concentric-speaker"
+      ],
+      "structureKind": [
+        "mobile-boombox-bot",
+        "hard-surface",
+        "stylized-robot"
+      ],
+      "motionPotential": [
+        "rotational-wheels",
+        "pivoting-earcups",
+        "antenna-flex",
+        "chest-pulse"
+      ],
+      "materialFamilies": [
+        "pastel-pink-plastic",
+        "emissive-neon",
+        "dark-bezel",
+        "silver-metal",
+        "black-rubber"
+      ],
+      "notes": "Pink Cat-Eared Cyber-Bot Vehicle reference"
+    },
+    "complexity": {
+      "tier": "ultra-complex",
+      "scores": {
+        "silhouetteComplexity": 3,
+        "componentCount": 3,
+        "hierarchyDepth": 3,
+        "repetitionDensity": 2,
+        "materialLayerCount": 3,
+        "localDetailDensity": 3,
+        "occlusionRisk": 2,
+        "actionReadinessNeed": 3
+      },
+      "estimatedCounts": {
+        "macroComponents": 5,
+        "mesoComponents": 24,
+        "microFeatureGroups": 16,
+        "materialLayers": 5,
+        "repetitionSystems": 3
+      },
+      "reasoning": [
+        "Ultra-complex hard-surface vehicle with separable chassis, stage platform, face screen, cat ears, headphones, chest ring, bumper, radio, 4 wheels"
+      ]
+    },
+    "specDepthDecision": {
+      "requiredDepth": "ultra-complex",
+      "minimumComponentLevels": [
+        "macro",
+        "meso",
+        "micro"
+      ],
+      "needsRepetitionSystems": true,
+      "needsMaterialLocalOverrides": true,
+      "needsMultipleReviewViews": true,
+      "needsActionReadyHierarchy": true,
+      "rationale": "Requires full hierarchy and material overrides for identity features"
+    },
+    "unknownsToResolveBeforeImplementation": [],
+    "detailInventory": {
+      "scanMethod": "grid-3x3",
+      "targetMinDetails": 16,
+      "note": "Detailed inventory with 22 micro-details",
+      "details": [
+        {
+          "id": "detail-face-bezel",
+          "kind": "contour",
+          "description": "Dark rounded rectangular face bezel with soft bevel encasing screen",
+          "region": {
+            "x": 0.35,
+            "y": 0.18,
+            "width": 0.28,
+            "height": 0.24,
+            "units": "normalized"
+          },
+          "scale": "meso",
+          "affects": "silhouette",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "face-screen/bezel-curvature"
+          },
+          "evidenceRef": "zones/zone-r0c1.png",
+          "confidence": 0.96
+        },
+        {
+          "id": "detail-cat-eyes",
+          "kind": "emissive",
+          "description": "Glowing white cat eyes with vertical slit pupils on black screen",
+          "region": {
+            "x": 0.38,
+            "y": 0.28,
+            "width": 0.22,
+            "height": 0.1,
+            "units": "normalized"
+          },
+          "scale": "meso",
+          "affects": "emissive",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "face-screen/cat-eyes"
+          },
+          "evidenceRef": "zones/zone-r0c1.png",
+          "confidence": 0.97
+        },
+        {
+          "id": "detail-cat-mouth",
+          "kind": "emissive",
+          "description": "Minimalist white caret '^' mouth below cat eyes",
+          "region": {
+            "x": 0.46,
+            "y": 0.38,
+            "width": 0.06,
+            "height": 0.04,
+            "units": "normalized"
+          },
+          "scale": "micro",
+          "affects": "emissive",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "face-screen/mouth-caret"
+          },
+          "evidenceRef": "zones/zone-r0c1.png",
+          "confidence": 0.92
+        },
+        {
+          "id": "detail-ear-left-outer",
+          "kind": "contour",
+          "description": "Left triangular cat ear with pink satin body shell, pointed tip",
+          "region": {
+            "x": 0.35,
+            "y": 0.05,
+            "width": 0.12,
+            "height": 0.16,
+            "units": "normalized"
+          },
+          "scale": "meso",
+          "affects": "silhouette",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "ears-left/outer-triangle"
+          },
+          "evidenceRef": "zones/zone-r0c0.png",
+          "confidence": 0.95
+        },
+        {
+          "id": "detail-ear-right-outer",
+          "kind": "contour",
+          "description": "Right triangular cat ear mirror of left with pink body",
+          "region": {
+            "x": 0.59,
+            "y": 0.05,
+            "width": 0.12,
+            "height": 0.16,
+            "units": "normalized"
+          },
+          "scale": "meso",
+          "affects": "silhouette",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "ears-right/outer-triangle"
+          },
+          "evidenceRef": "zones/zone-r0c2.png",
+          "confidence": 0.95
+        },
+        {
+          "id": "detail-ear-inner-pads",
+          "kind": "emissive",
+          "description": "Hot-pink emissive inner triangular pads inside cat ears #FF2A85 intensity 2.2",
+          "region": {
+            "x": 0.38,
+            "y": 0.08,
+            "width": 0.08,
+            "height": 0.09,
+            "units": "normalized"
+          },
+          "scale": "meso",
+          "affects": "emissive",
+          "mapsTo": {
+            "type": "material.localOverrides",
+            "ref": "emissive-pink-white/inner-pad-glow"
+          },
+          "evidenceRef": "zones/zone-r0c1.png",
+          "confidence": 0.94
+        },
+        {
+          "id": "detail-headband",
+          "kind": "contour",
+          "description": "Thick arching overhead headband connecting earcups, pink satin with center seam",
+          "region": {
+            "x": 0.36,
+            "y": 0.12,
+            "width": 0.32,
+            "height": 0.14,
+            "units": "normalized"
+          },
+          "scale": "macro",
+          "affects": "silhouette",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "headphones/headband-arch"
+          },
+          "evidenceRef": "zones/zone-r0c1.png",
+          "confidence": 0.96
+        },
+        {
+          "id": "detail-earcup-left",
+          "kind": "bevel",
+          "description": "Left oversized cylindrical side earcup with silver outer rim",
+          "region": {
+            "x": 0.28,
+            "y": 0.22,
+            "width": 0.11,
+            "height": 0.18,
+            "units": "normalized"
+          },
+          "scale": "meso",
+          "affects": "specular",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "earcup-left/outer-rim"
+          },
+          "evidenceRef": "zones/zone-r1c0.png",
+          "confidence": 0.95
+        },
+        {
+          "id": "detail-earcup-right",
+          "kind": "bevel",
+          "description": "Right oversized earcup mirror with silver rim",
+          "region": {
+            "x": 0.62,
+            "y": 0.22,
+            "width": 0.11,
+            "height": 0.18,
+            "units": "normalized"
+          },
+          "scale": "meso",
+          "affects": "specular",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "earcup-right/outer-rim"
+          },
+          "evidenceRef": "zones/zone-r1c2.png",
+          "confidence": 0.95
+        },
+        {
+          "id": "detail-earcup-badges",
+          "kind": "emissive",
+          "description": "Glowing pink center hexagon logo badges on side earcups with inner ring",
+          "region": {
+            "x": 0.29,
+            "y": 0.27,
+            "width": 0.09,
+            "height": 0.09,
+            "units": "normalized"
+          },
+          "scale": "meso",
+          "affects": "emissive",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "earcup-left/badge-hex-glow"
+          },
+          "evidenceRef": "zones/zone-r1c0.png",
+          "confidence": 0.91
+        },
+        {
+          "id": "detail-chest-speaker-ring",
+          "kind": "emissive",
+          "description": "Concentric glowing pink chest subwoofer ring #FF2A85 emissiveIntensity 2.2 around black speaker",
+          "region": {
+            "x": 0.36,
+            "y": 0.46,
+            "width": 0.18,
+            "height": 0.18,
+            "units": "normalized"
+          },
+          "scale": "meso",
+          "affects": "emissive",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "chest-ring/pink-glow-ring"
+          },
+          "evidenceRef": "zones/zone-r1c1.png",
+          "confidence": 0.96
+        },
+        {
+          "id": "detail-speaker-cone",
+          "kind": "groove",
+          "description": "Black speaker cone with central dome and perforated fabric mesh",
+          "region": {
+            "x": 0.38,
+            "y": 0.48,
+            "width": 0.14,
+            "height": 0.14,
+            "units": "normalized"
+          },
+          "scale": "meso",
+          "affects": "normal",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "chest-ring/speaker-cone-fabric"
+          },
+          "evidenceRef": "zones/zone-r1c1.png",
+          "confidence": 0.89
+        },
+        {
+          "id": "detail-bumper-knobs",
+          "kind": "bevel",
+          "description": "Twin circular silver metallic headlight/knobs flanking chest speaker",
+          "region": {
+            "x": 0.32,
+            "y": 0.55,
+            "width": 0.06,
+            "height": 0.06,
+            "units": "normalized"
+          },
+          "scale": "micro",
+          "affects": "specular",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "bumper/knob-left-specular"
+          },
+          "evidenceRef": "zones/zone-r1c1.png",
+          "confidence": 0.9
+        },
+        {
+          "id": "detail-bumper-grilles",
+          "kind": "groove",
+          "description": "Two lower rectangular silver speaker grilles on front bumper with horizontal slats",
+          "region": {
+            "x": 0.34,
+            "y": 0.62,
+            "width": 0.24,
+            "height": 0.07,
+            "units": "normalized"
+          },
+          "scale": "meso",
+          "affects": "normal",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "bumper/grille-left-slats"
+          },
+          "evidenceRef": "zones/zone-r2c1.png",
+          "confidence": 0.91
+        },
+        {
+          "id": "detail-radio-module",
+          "kind": "contour",
+          "description": "Tactical walkie-talkie radio receiver module on right side panel, dark gray",
+          "region": {
+            "x": 0.61,
+            "y": 0.38,
+            "width": 0.1,
+            "height": 0.18,
+            "units": "normalized"
+          },
+          "scale": "meso",
+          "affects": "silhouette",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "radio-module/box-tactical"
+          },
+          "evidenceRef": "zones/zone-r1c2.png",
+          "confidence": 0.92
+        },
+        {
+          "id": "detail-radio-switches",
+          "kind": "bevel",
+          "description": "Small toggle switches and knobs on radio module side",
+          "region": {
+            "x": 0.64,
+            "y": 0.4,
+            "width": 0.04,
+            "height": 0.12,
+            "units": "normalized"
+          },
+          "scale": "micro",
+          "affects": "specular",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "radio-module/toggle-switches"
+          },
+          "evidenceRef": "zones/zone-r1c2.png",
+          "confidence": 0.86
+        },
+        {
+          "id": "detail-radio-antennas",
+          "kind": "contour",
+          "description": "Dual vertical whip antennas with ball tips on radio module top",
+          "region": {
+            "x": 0.61,
+            "y": 0.28,
+            "width": 0.04,
+            "height": 0.15,
+            "units": "normalized"
+          },
+          "scale": "meso",
+          "affects": "silhouette",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "radio-module/antenna-dual"
+          },
+          "evidenceRef": "zones/zone-r0c2.png",
+          "confidence": 0.93
+        },
+        {
+          "id": "detail-wheels-tires",
+          "kind": "contour",
+          "description": "Four wide black rubber tires #1C1C1E roughness 0.85 with deep tread",
+          "region": {
+            "x": 0.22,
+            "y": 0.58,
+            "width": 0.16,
+            "height": 0.22,
+            "units": "normalized"
+          },
+          "scale": "meso",
+          "affects": "silhouette",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "wheel-FL/tire-tread"
+          },
+          "evidenceRef": "zones/zone-r2c0.png",
+          "confidence": 0.96
+        },
+        {
+          "id": "detail-wheels-rims",
+          "kind": "bevel",
+          "description": "Silver 6-spoke star rims #D1D5DB metalness 0.85 roughness 0.22 with lug nuts",
+          "region": {
+            "x": 0.24,
+            "y": 0.62,
+            "width": 0.12,
+            "height": 0.14,
+            "units": "normalized"
+          },
+          "scale": "meso",
+          "affects": "specular",
+          "mapsTo": {
+            "type": "material.localOverrides",
+            "ref": "spoke-star-pattern"
+          },
+          "evidenceRef": "zones/zone-r2c0.png",
+          "confidence": 0.94
+        },
+        {
+          "id": "detail-stage-platform",
+          "kind": "contour",
+          "description": "Layered circular pink and white stage display disc with 5 concentric rings beneath wheels",
+          "region": {
+            "x": 0.08,
+            "y": 0.65,
+            "width": 0.84,
+            "height": 0.32,
+            "units": "normalized"
+          },
+          "scale": "macro",
+          "affects": "silhouette",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "stage-platform/concentric-rings"
+          },
+          "evidenceRef": "zones/zone-r2c1.png",
+          "confidence": 0.96
+        },
+        {
+          "id": "detail-body-gloss",
+          "kind": "gloss",
+          "description": "Satin pastel pink plastic body #EE98B9 with clearcoat 0.2 satin sheen and panel seams",
+          "region": {
+            "x": 0.32,
+            "y": 0.38,
+            "width": 0.38,
+            "height": 0.32,
+            "units": "normalized"
+          },
+          "scale": "macro",
+          "affects": "specular",
+          "mapsTo": {
+            "type": "material.localOverrides",
+            "ref": "pink-body-shell/pink-satin-clearcoat"
+          },
+          "evidenceRef": "zones/zone-r1c1.png",
+          "confidence": 0.95
+        },
+        {
+          "id": "detail-side-leds",
+          "kind": "emissive",
+          "description": "Small pink emissive accent strips along side panels and fenders",
+          "region": {
+            "x": 0.55,
+            "y": 0.48,
+            "width": 0.08,
+            "height": 0.04,
+            "units": "normalized"
+          },
+          "scale": "micro",
+          "affects": "emissive",
+          "mapsTo": {
+            "type": "material.localOverrides",
+            "ref": "emissive-pink-white/side-led-strips"
+          },
+          "evidenceRef": "zones/zone-r1c2.png",
+          "confidence": 0.85
+        }
+      ]
+    },
+    "anatomy": {
+      "applies": false,
+      "styleHeads": 0,
+      "proportions": {
+        "headUnit": 0,
+        "torso": 0,
+        "legs": 0,
+        "shoulderWidth": 0,
+        "hipWidth": 0
+      },
+      "pose": {
+        "type": "unassessed",
+        "jointAngles": {}
+      },
+      "faceLandmarks": {
+        "eyeLine": 0,
+        "eyeSpacing": 0,
+        "noseBase": 0,
+        "mouthLine": 0,
+        "hairline": 0
+      },
+      "features": [],
+      "confidence": 0,
+      "note": "Not character"
+    },
+    "sourceImage": "reference.png"
+  },
+  "qualityContract": {
+    "qualityBar": "ultra-complex",
+    "definitionOfDone": [
+      "Matches reference silhouette, proportions, component hierarchy, pastel pink satin material #EE98B9 clearcoat 0.2, emissive details #FF2A85/#FFFFFF intensity 2.2, silver rims #D1D5DB metalness 0.85, black tires #1C1C1E roughness 0.85, and all 22 identity micro-details"
+    ],
+    "minimumSpecDepth": {
+      "macroComponents": 5,
+      "mesoComponents": 16,
+      "microFeatureGroups": 8,
+      "materialLayers": 4,
+      "repetitionSystems": 2,
+      "reviewViewpoints": 5
+    },
+    "featureGroups": [
+      {
+        "id": "overall-silhouette",
+        "name": "Overall silhouette and proportions",
+        "required": true,
+        "qualityCriteria": [
+          "Bounding shape matches rounded-box chassis plus circular stage disc"
+        ],
+        "evidenceRefs": [
+          "evidence-full-body"
+        ],
+        "failureModes": [
+          "generic placeholder"
+        ]
+      },
+      {
+        "id": "cat-face-and-ears",
+        "name": "Cat face bezel and ears with emissive pads",
+        "required": true,
+        "qualityCriteria": [
+          "Dark bezel + glowing white cat eyes + hot-pink inner ear pads emissive"
+        ],
+        "evidenceRefs": [
+          "evidence-full-body"
+        ],
+        "failureModes": [
+          "eyes missing or wrong emissive color"
+        ]
+      },
+      {
+        "id": "headphones-structure",
+        "name": "Headphone headband and earcups with badges",
+        "required": true,
+        "qualityCriteria": [
+          "Arching headband plus cylindrical earcups with silver rims and hexagon glowing badges"
+        ],
+        "evidenceRefs": [
+          "evidence-full-body"
+        ],
+        "failureModes": [
+          "headband flat or earcups fused"
+        ]
+      },
+      {
+        "id": "chest-ring-bumper",
+        "name": "Chest subwoofer ring and front bumper knobs/grilles",
+        "required": true,
+        "qualityCriteria": [
+          "Concentric pink glowing ring + bumper knobs + twin silver grilles"
+        ],
+        "evidenceRefs": [
+          "evidence-full-body"
+        ],
+        "failureModes": [
+          "speaker ring missing glow"
+        ]
+      },
+      {
+        "id": "radio-wheels-platform",
+        "name": "Radio module antennas and wheels stage platform",
+        "required": true,
+        "qualityCriteria": [
+          "Right side radio module with toggle switches and dual antennas plus 4 black tires with 6-spoke silver rims on layered pink/white stage"
+        ],
+        "evidenceRefs": [
+          "evidence-full-body"
+        ],
+        "failureModes": [
+          "wheels fused or antennas missing"
+        ]
+      }
+    ],
+    "visualDeltaChecks": [
+      "silhouette delta",
+      "hierarchy delta",
+      "material response delta",
+      "emissive color delta",
+      "local feature placement delta"
+    ],
+    "antiShallowSpecRules": [
+      "Do not proceed with single root component"
+    ]
+  },
+  "terminologyProfile": {
+    "domain": "real-time procedural Three.js asset",
+    "geometryTerms": [
+      "silhouette",
+      "topology",
+      "primitive",
+      "bevel",
+      "chamfer",
+      "taper",
+      "torus",
+      "extrude",
+      "rounded-box",
+      "deployment",
+      "sockets"
+    ],
+    "materialTerms": [
+      "albedo",
+      "roughness",
+      "metalness",
+      "emissive",
+      "emissiveIntensity",
+      "clearcoat",
+      "clearcoatRoughness",
+      "normal map"
+    ],
+    "lightingTerms": [
+      "key light",
+      "fill light",
+      "rim light",
+      "HDRI",
+      "contact shadow"
+    ],
+    "descriptionRule": "Use measurable 3D terms"
+  },
+  "coordinateFrame": {
+    "up": "+Y",
+    "forward": "+Z",
+    "right": "+X",
+    "origin": "center of chassis bottom"
+  },
+  "silhouette": {
+    "boundingShape": "rounded-box with circular platform",
+    "aspectRatios": [
+      1.79
+    ],
+    "symmetry": "bilateral left-right with front-back slight asymmetry due to radio module",
+    "dominantCurves": [
+      "arched headband",
+      "circular platform rings",
+      "toroidal chest ring"
+    ],
+    "negativeSpaces": [
+      "gap under headband",
+      "wheel arch clearance"
+    ]
+  },
+  "viewEvidence": [
+    {
+      "id": "evidence-full-body",
+      "view": "primary-front-quarter",
+      "imageRegion": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "units": "normalized"
+      },
+      "observations": [
+        "full isometric pink cat-bot vehicle"
+      ],
+      "confidence": 0.96
+    }
+  ],
+  "componentTree": [
+    {
+      "id": "root",
+      "name": "Root",
+      "level": "macro",
+      "role": "assembly",
+      "importance": 1.0,
+      "confidence": 1.0,
+      "primitive": "box",
+      "topologyClass": "assembled-solid",
+      "topologyRationale": "Root grouping vehicle and stage platform",
+      "geometryDescriptor": {
+        "topologyIntent": "root assembly",
+        "edgeTreatment": {
+          "type": "none",
+          "bevelRadius": 0,
+          "segments": 1
+        },
+        "deformationStack": [],
+        "uvStrategy": "none",
+        "normalStrategy": "none"
+      },
+      "parent": null,
+      "attachment": null,
+      "dimensions": {
+        "width": 3.0,
+        "height": 3.0,
+        "depth": 3.0,
+        "units": "relative",
+        "confidence": 1.0
+      },
+      "transform": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "actionProfile": {
+        "animationRole": "root",
+        "pivot": {
+          "mode": "center",
+          "localPosition": [
+            0,
+            0,
+            0
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "confidence": 1.0
+        },
+        "transformChannels": {
+          "translate": true,
+          "rotate": true,
+          "scale": true,
+          "bend": false,
+          "twist": false,
+          "detach": false,
+          "visibility": true,
+          "materialState": true
+        },
+        "sockets": [],
+        "collider": {
+          "type": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            3,
+            3,
+            3
+          ],
+          "isTrigger": false,
+          "notes": "root"
+        },
+        "constraints": [],
+        "destruction": {
+          "breakable": false,
+          "fractureGroup": "root",
+          "seamRefs": [],
+          "detachableFragments": [],
+          "breakImpulse": 0,
+          "debrisMaterial": "pink-body-shell"
+        }
+      },
+      "material": "pink-body-shell",
+      "materialLayers": [
+        "pink-body-shell"
+      ],
+      "deformations": [],
+      "joints": [],
+      "seams": [],
+      "localFeatures": [
+        {
+          "id": "root-pivot",
+          "name": "Root Pivot",
+          "type": "pivot",
+          "description": "Root pivot"
+        }
+      ],
+      "surfaceDetail": {},
+      "evidenceRefs": [
+        "evidence-full-body"
+      ],
+      "details": [],
+      "fidelityTier": "blockout",
+      "colorMaterialRecipe": {
+        "dominantAlbedo": "rgba(238, 152, 185, 1.0)",
+        "secondaryAlbedo": "rgba(255, 255, 255, 1.0)",
+        "materialClass": "plastic",
+        "materialClassConfidence": 0.95
+      }
+    },
+    {
+      "id": "stage-platform",
+      "name": "Circular Pink/White Stage Platform",
+      "level": "macro",
+      "role": "body",
+      "importance": 0.9,
+      "confidence": 0.9,
+      "primitive": "cylinder",
+      "topologyClass": "assembled-solid",
+      "topologyRationale": "Layered circular disc platform beneath wheels",
+      "geometryDescriptor": {
+        "topologyIntent": "Circular Pink/White Stage Platform",
+        "edgeTreatment": {
+          "type": "bevel",
+          "bevelRadius": 0.02,
+          "segments": 3
+        },
+        "deformationStack": [],
+        "uvStrategy": "auto-unwrap",
+        "normalStrategy": "smooth"
+      },
+      "parent": "root",
+      "attachment": {
+        "parentId": "root",
+        "parentSocket": "socket-stage-platform",
+        "contactType": "socket",
+        "localStart": [
+          0,
+          0,
+          0
+        ],
+        "localEnd": [
+          0,
+          0.05,
+          0
+        ],
+        "embedDepth": 0.05,
+        "overlap": 0.05,
+        "gapTolerance": 0.01,
+        "evidenceRefs": [
+          "evidence-full-body"
+        ]
+      },
+      "dimensions": {
+        "width": 3.0,
+        "height": 0.2,
+        "depth": 3.0,
+        "units": "relative",
+        "confidence": 0.9
+      },
+      "transform": {
+        "position": [
+          0,
+          -0.8,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          3.0,
+          0.2,
+          3.0
+        ]
+      },
+      "actionProfile": {
+        "animationRole": "prop-part",
+        "pivot": {
+          "mode": "center",
+          "localPosition": [
+            0,
+            0,
+            0
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.8
+        },
+        "transformChannels": {
+          "translate": true,
+          "rotate": true,
+          "scale": true,
+          "bend": false,
+          "twist": false,
+          "detach": false,
+          "visibility": true,
+          "materialState": true
+        },
+        "sockets": [],
+        "collider": {
+          "type": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false,
+          "notes": "proxy"
+        },
+        "constraints": [],
+        "destruction": {
+          "breakable": false,
+          "fractureGroup": "stage-platform",
+          "seamRefs": [],
+          "detachableFragments": [],
+          "breakImpulse": 0.0,
+          "debrisMaterial": "pink-body-shell"
+        }
+      },
+      "material": "pink-body-shell",
+      "materialLayers": [
+        "pink-body-shell"
+      ],
+      "deformations": [],
+      "joints": [],
+      "seams": [],
+      "localFeatures": [
+        {
+          "id": "concentric-rings",
+          "name": "5 Concentric Rings Pink/White",
+          "type": "contour",
+          "description": "Outer pink, white ring, inner pink, center white, inner pink disc"
+        },
+        {
+          "id": "platform-bevel",
+          "name": "Beveled Edge Rings",
+          "type": "bevel",
+          "description": "Bevel between each disc layer"
+        }
+      ],
+      "surfaceDetail": {
+        "macroRoughness": 0.05,
+        "microRoughness": 0.02,
+        "bumpAmplitude": 0.01,
+        "normalPattern": "",
+        "displacementPattern": "",
+        "occlusionPattern": "",
+        "edgeWearPattern": "",
+        "notes": ""
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ],
+      "details": [],
+      "fidelityTier": "blockout",
+      "colorMaterialRecipe": {
+        "dominantAlbedo": "rgba(238, 152, 185, 1.0)",
+        "secondaryAlbedo": "rgba(255, 105, 180, 1.0)",
+        "materialClass": "plastic",
+        "materialClassConfidence": 0.9
+      }
+    },
+    {
+      "id": "chassis",
+      "name": "Main Rounded-Box Body Shell",
+      "level": "macro",
+      "role": "body",
+      "importance": 1.0,
+      "confidence": 0.9,
+      "primitive": "box",
+      "topologyClass": "assembled-solid",
+      "topologyRationale": "Main pink pastel body shell with clearcoat 0.2",
+      "geometryDescriptor": {
+        "topologyIntent": "Main Rounded-Box Body Shell",
+        "edgeTreatment": {
+          "type": "bevel",
+          "bevelRadius": 0.02,
+          "segments": 3
+        },
+        "deformationStack": [],
+        "uvStrategy": "auto-unwrap",
+        "normalStrategy": "smooth"
+      },
+      "parent": "root",
+      "attachment": {
+        "parentId": "root",
+        "parentSocket": "socket-chassis",
+        "contactType": "socket",
+        "localStart": [
+          0,
+          0,
+          0
+        ],
+        "localEnd": [
+          0,
+          0.05,
+          0
+        ],
+        "embedDepth": 0.05,
+        "overlap": 0.05,
+        "gapTolerance": 0.01,
+        "evidenceRefs": [
+          "evidence-full-body"
+        ]
+      },
+      "dimensions": {
+        "width": 1.9,
+        "height": 1.1,
+        "depth": 1.8,
+        "units": "relative",
+        "confidence": 0.9
+      },
+      "transform": {
+        "position": [
+          0,
+          0.15,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1.9,
+          1.1,
+          1.8
+        ]
+      },
+      "actionProfile": {
+        "animationRole": "prop-part",
+        "pivot": {
+          "mode": "center",
+          "localPosition": [
+            0,
+            0,
+            0
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.8
+        },
+        "transformChannels": {
+          "translate": true,
+          "rotate": true,
+          "scale": true,
+          "bend": false,
+          "twist": false,
+          "detach": false,
+          "visibility": true,
+          "materialState": true
+        },
+        "sockets": [],
+        "collider": {
+          "type": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false,
+          "notes": "proxy"
+        },
+        "constraints": [],
+        "destruction": {
+          "breakable": false,
+          "fractureGroup": "chassis",
+          "seamRefs": [],
+          "detachableFragments": [],
+          "breakImpulse": 0.0,
+          "debrisMaterial": "pink-body-shell"
+        }
+      },
+      "material": "pink-body-shell",
+      "materialLayers": [
+        "pink-body-shell"
+      ],
+      "deformations": [],
+      "joints": [],
+      "seams": [],
+      "localFeatures": [
+        {
+          "id": "body-bevels",
+          "name": "Rounded Corner Bevels",
+          "type": "bevel",
+          "description": "Rounded chassis corners radius 0.22"
+        },
+        {
+          "id": "panel-seams",
+          "name": "Body Panel Seams",
+          "type": "seam",
+          "description": "Subtle seam lines splitting front and side panels"
+        },
+        {
+          "id": "side-vents",
+          "name": "Top Cooling Vents",
+          "type": "groove",
+          "description": "Recessed vents on top"
+        }
+      ],
+      "surfaceDetail": {
+        "macroRoughness": 0.05,
+        "microRoughness": 0.02,
+        "bumpAmplitude": 0.01,
+        "normalPattern": "",
+        "displacementPattern": "",
+        "occlusionPattern": "",
+        "edgeWearPattern": "",
+        "notes": ""
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ],
+      "details": [],
+      "fidelityTier": "blockout",
+      "colorMaterialRecipe": {
+        "dominantAlbedo": "rgba(238, 152, 185, 1.0)",
+        "secondaryAlbedo": "rgba(255, 105, 180, 1.0)",
+        "materialClass": "plastic",
+        "materialClassConfidence": 0.9
+      }
+    },
+    {
+      "id": "face-screen",
+      "name": "Dark Bezel Face Screen with Cat Eyes",
+      "level": "macro",
+      "role": "body",
+      "importance": 0.8,
+      "confidence": 0.9,
+      "primitive": "box",
+      "topologyClass": "surface-relief",
+      "topologyRationale": "Inset dark bezel encasing glowing white cat face",
+      "geometryDescriptor": {
+        "topologyIntent": "Dark Bezel Face Screen with Cat Eyes",
+        "edgeTreatment": {
+          "type": "bevel",
+          "bevelRadius": 0.02,
+          "segments": 3
+        },
+        "deformationStack": [],
+        "uvStrategy": "auto-unwrap",
+        "normalStrategy": "smooth"
+      },
+      "parent": "chassis",
+      "attachment": {
+        "parentId": "chassis",
+        "parentSocket": "socket-face-screen",
+        "contactType": "socket",
+        "localStart": [
+          0,
+          0,
+          0
+        ],
+        "localEnd": [
+          0,
+          0.05,
+          0
+        ],
+        "embedDepth": 0.05,
+        "overlap": 0.05,
+        "gapTolerance": 0.01,
+        "evidenceRefs": [
+          "evidence-full-body"
+        ]
+      },
+      "dimensions": {
+        "width": 1.15,
+        "height": 0.72,
+        "depth": 0.15,
+        "units": "relative",
+        "confidence": 0.9
+      },
+      "transform": {
+        "position": [
+          0,
+          0.55,
+          0.71
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1.15,
+          0.72,
+          0.15
+        ]
+      },
+      "actionProfile": {
+        "animationRole": "prop-part",
+        "pivot": {
+          "mode": "center",
+          "localPosition": [
+            0,
+            0,
+            0
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.8
+        },
+        "transformChannels": {
+          "translate": true,
+          "rotate": true,
+          "scale": true,
+          "bend": false,
+          "twist": false,
+          "detach": false,
+          "visibility": true,
+          "materialState": true
+        },
+        "sockets": [],
+        "collider": {
+          "type": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false,
+          "notes": "proxy"
+        },
+        "constraints": [],
+        "destruction": {
+          "breakable": false,
+          "fractureGroup": "face-screen",
+          "seamRefs": [],
+          "detachableFragments": [],
+          "breakImpulse": 0.0,
+          "debrisMaterial": "screen-bezel"
+        }
+      },
+      "material": "screen-bezel",
+      "materialLayers": [
+        "screen-bezel"
+      ],
+      "deformations": [],
+      "joints": [],
+      "seams": [],
+      "localFeatures": [
+        {
+          "id": "bezel-curvature",
+          "name": "Bezel Rounded Contour",
+          "type": "contour",
+          "description": "Smooth rounded border of dark bezel"
+        },
+        {
+          "id": "cat-eyes",
+          "name": "Glowing White Cat Eyes",
+          "type": "emissive",
+          "description": "Two glowing eyes with vertical slit pupils emissive #FFFFFF intensity 2.2"
+        },
+        {
+          "id": "mouth-caret",
+          "name": "Caret Mouth",
+          "type": "emissive",
+          "description": "Small ^ mouth emissive white"
+        }
+      ],
+      "surfaceDetail": {
+        "macroRoughness": 0.05,
+        "microRoughness": 0.02,
+        "bumpAmplitude": 0.01,
+        "normalPattern": "",
+        "displacementPattern": "",
+        "occlusionPattern": "",
+        "edgeWearPattern": "",
+        "notes": ""
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ],
+      "details": [],
+      "fidelityTier": "blockout",
+      "colorMaterialRecipe": {
+        "dominantAlbedo": "rgba(238, 152, 185, 1.0)",
+        "secondaryAlbedo": "rgba(255, 105, 180, 1.0)",
+        "materialClass": "plastic",
+        "materialClassConfidence": 0.9
+      }
+    },
+    {
+      "id": "ears-left",
+      "name": "Left Cat Ear Triangular",
+      "level": "meso",
+      "role": "detail",
+      "importance": 0.8,
+      "confidence": 0.9,
+      "primitive": "cone",
+      "topologyClass": "assembled-solid",
+      "topologyRationale": "Left triangular ear atop headband with inner pink emissive pad",
+      "geometryDescriptor": {
+        "topologyIntent": "Left Cat Ear Triangular",
+        "edgeTreatment": {
+          "type": "bevel",
+          "bevelRadius": 0.02,
+          "segments": 3
+        },
+        "deformationStack": [],
+        "uvStrategy": "auto-unwrap",
+        "normalStrategy": "smooth"
+      },
+      "parent": "chassis",
+      "attachment": {
+        "parentId": "chassis",
+        "parentSocket": "socket-ears-left",
+        "contactType": "socket",
+        "localStart": [
+          0,
+          0,
+          0
+        ],
+        "localEnd": [
+          0,
+          0.05,
+          0
+        ],
+        "embedDepth": 0.05,
+        "overlap": 0.05,
+        "gapTolerance": 0.01,
+        "evidenceRefs": [
+          "evidence-full-body"
+        ]
+      },
+      "dimensions": {
+        "width": 0.44,
+        "height": 0.48,
+        "depth": 0.22,
+        "units": "relative",
+        "confidence": 0.9
+      },
+      "transform": {
+        "position": [
+          -0.48,
+          1.28,
+          0.05
+        ],
+        "rotation": [
+          0,
+          -0.15,
+          -0.08
+        ],
+        "scale": [
+          0.44,
+          0.48,
+          0.22
+        ]
+      },
+      "actionProfile": {
+        "animationRole": "prop-part",
+        "pivot": {
+          "mode": "center",
+          "localPosition": [
+            0,
+            0,
+            0
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.8
+        },
+        "transformChannels": {
+          "translate": true,
+          "rotate": true,
+          "scale": true,
+          "bend": false,
+          "twist": false,
+          "detach": false,
+          "visibility": true,
+          "materialState": true
+        },
+        "sockets": [],
+        "collider": {
+          "type": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false,
+          "notes": "proxy"
+        },
+        "constraints": [],
+        "destruction": {
+          "breakable": false,
+          "fractureGroup": "ears-left",
+          "seamRefs": [],
+          "detachableFragments": [],
+          "breakImpulse": 0.0,
+          "debrisMaterial": "pink-body-shell"
+        }
+      },
+      "material": "pink-body-shell",
+      "materialLayers": [
+        "pink-body-shell"
+      ],
+      "deformations": [],
+      "joints": [],
+      "seams": [],
+      "localFeatures": [
+        {
+          "id": "outer-triangle",
+          "name": "Outer Pink Triangular Frame",
+          "type": "contour",
+          "description": "Triangular outer pink frame"
+        },
+        {
+          "id": "inner-pad-emissive",
+          "name": "Hot-Pink Inner Pad Emissive",
+          "type": "emissive",
+          "description": "Inner pad #FF2A85 emissive 2.2"
+        }
+      ],
+      "surfaceDetail": {
+        "macroRoughness": 0.05,
+        "microRoughness": 0.02,
+        "bumpAmplitude": 0.01,
+        "normalPattern": "",
+        "displacementPattern": "",
+        "occlusionPattern": "",
+        "edgeWearPattern": "",
+        "notes": ""
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ],
+      "details": [],
+      "fidelityTier": "blockout",
+      "colorMaterialRecipe": {
+        "dominantAlbedo": "rgba(238, 152, 185, 1.0)",
+        "secondaryAlbedo": "rgba(255, 105, 180, 1.0)",
+        "materialClass": "plastic",
+        "materialClassConfidence": 0.9
+      }
+    },
+    {
+      "id": "ears-right",
+      "name": "Right Cat Ear Triangular",
+      "level": "meso",
+      "role": "detail",
+      "importance": 0.8,
+      "confidence": 0.9,
+      "primitive": "cone",
+      "topologyClass": "assembled-solid",
+      "topologyRationale": "Right triangular ear mirror",
+      "geometryDescriptor": {
+        "topologyIntent": "Right Cat Ear Triangular",
+        "edgeTreatment": {
+          "type": "bevel",
+          "bevelRadius": 0.02,
+          "segments": 3
+        },
+        "deformationStack": [],
+        "uvStrategy": "auto-unwrap",
+        "normalStrategy": "smooth"
+      },
+      "parent": "chassis",
+      "attachment": {
+        "parentId": "chassis",
+        "parentSocket": "socket-ears-right",
+        "contactType": "socket",
+        "localStart": [
+          0,
+          0,
+          0
+        ],
+        "localEnd": [
+          0,
+          0.05,
+          0
+        ],
+        "embedDepth": 0.05,
+        "overlap": 0.05,
+        "gapTolerance": 0.01,
+        "evidenceRefs": [
+          "evidence-full-body"
+        ]
+      },
+      "dimensions": {
+        "width": 0.44,
+        "height": 0.48,
+        "depth": 0.22,
+        "units": "relative",
+        "confidence": 0.9
+      },
+      "transform": {
+        "position": [
+          0.48,
+          1.28,
+          0.05
+        ],
+        "rotation": [
+          0,
+          0.15,
+          0.08
+        ],
+        "scale": [
+          0.44,
+          0.48,
+          0.22
+        ]
+      },
+      "actionProfile": {
+        "animationRole": "prop-part",
+        "pivot": {
+          "mode": "center",
+          "localPosition": [
+            0,
+            0,
+            0
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.8
+        },
+        "transformChannels": {
+          "translate": true,
+          "rotate": true,
+          "scale": true,
+          "bend": false,
+          "twist": false,
+          "detach": false,
+          "visibility": true,
+          "materialState": true
+        },
+        "sockets": [],
+        "collider": {
+          "type": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false,
+          "notes": "proxy"
+        },
+        "constraints": [],
+        "destruction": {
+          "breakable": false,
+          "fractureGroup": "ears-right",
+          "seamRefs": [],
+          "detachableFragments": [],
+          "breakImpulse": 0.0,
+          "debrisMaterial": "pink-body-shell"
+        }
+      },
+      "material": "pink-body-shell",
+      "materialLayers": [
+        "pink-body-shell"
+      ],
+      "deformations": [],
+      "joints": [],
+      "seams": [],
+      "localFeatures": [
+        {
+          "id": "outer-triangle",
+          "name": "Outer Pink Triangular Frame",
+          "type": "contour",
+          "description": "Triangular outer pink frame"
+        },
+        {
+          "id": "inner-pad-emissive",
+          "name": "Hot-Pink Inner Pad Emissive",
+          "type": "emissive",
+          "description": "Inner pad #FF2A85 emissive 2.2"
+        }
+      ],
+      "surfaceDetail": {
+        "macroRoughness": 0.05,
+        "microRoughness": 0.02,
+        "bumpAmplitude": 0.01,
+        "normalPattern": "",
+        "displacementPattern": "",
+        "occlusionPattern": "",
+        "edgeWearPattern": "",
+        "notes": ""
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ],
+      "details": [],
+      "fidelityTier": "blockout",
+      "colorMaterialRecipe": {
+        "dominantAlbedo": "rgba(238, 152, 185, 1.0)",
+        "secondaryAlbedo": "rgba(255, 105, 180, 1.0)",
+        "materialClass": "plastic",
+        "materialClassConfidence": 0.9
+      }
+    },
+    {
+      "id": "headphones",
+      "name": "Overhead Headband + Side Earcups",
+      "level": "macro",
+      "role": "body",
+      "importance": 0.8,
+      "confidence": 0.9,
+      "primitive": "torus",
+      "topologyClass": "assembled-solid",
+      "topologyRationale": "Arching headband plus earcups with silver rims and hexagon badges",
+      "geometryDescriptor": {
+        "topologyIntent": "Overhead Headband + Side Earcups",
+        "edgeTreatment": {
+          "type": "bevel",
+          "bevelRadius": 0.02,
+          "segments": 3
+        },
+        "deformationStack": [],
+        "uvStrategy": "auto-unwrap",
+        "normalStrategy": "smooth"
+      },
+      "parent": "chassis",
+      "attachment": {
+        "parentId": "chassis",
+        "parentSocket": "socket-headphones",
+        "contactType": "socket",
+        "localStart": [
+          0,
+          0,
+          0
+        ],
+        "localEnd": [
+          0,
+          0.05,
+          0
+        ],
+        "embedDepth": 0.05,
+        "overlap": 0.05,
+        "gapTolerance": 0.01,
+        "evidenceRefs": [
+          "evidence-full-body"
+        ]
+      },
+      "dimensions": {
+        "width": 1.56,
+        "height": 0.62,
+        "depth": 0.18,
+        "units": "relative",
+        "confidence": 0.9
+      },
+      "transform": {
+        "position": [
+          0,
+          0.9,
+          0.05
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1.56,
+          0.62,
+          0.18
+        ]
+      },
+      "actionProfile": {
+        "animationRole": "prop-part",
+        "pivot": {
+          "mode": "center",
+          "localPosition": [
+            0,
+            0,
+            0
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.8
+        },
+        "transformChannels": {
+          "translate": true,
+          "rotate": true,
+          "scale": true,
+          "bend": false,
+          "twist": false,
+          "detach": false,
+          "visibility": true,
+          "materialState": true
+        },
+        "sockets": [],
+        "collider": {
+          "type": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false,
+          "notes": "proxy"
+        },
+        "constraints": [],
+        "destruction": {
+          "breakable": false,
+          "fractureGroup": "headphones",
+          "seamRefs": [],
+          "detachableFragments": [],
+          "breakImpulse": 0.0,
+          "debrisMaterial": "pink-body-shell"
+        }
+      },
+      "material": "pink-body-shell",
+      "materialLayers": [
+        "pink-body-shell"
+      ],
+      "deformations": [],
+      "joints": [],
+      "seams": [],
+      "localFeatures": [
+        {
+          "id": "headband-arch",
+          "name": "Headband Arch Curve",
+          "type": "contour",
+          "description": "Thick arch curve radius ~0.7"
+        },
+        {
+          "id": "earcup-rim-silver",
+          "name": "Silver Outer Rims",
+          "type": "bevel",
+          "description": "Silver rims #D1D5DB metalness 0.85"
+        },
+        {
+          "id": "badge-hex-glow",
+          "name": "Hexagon Badge Glow",
+          "type": "emissive",
+          "description": "Glowing pink hexagon center badges"
+        }
+      ],
+      "surfaceDetail": {
+        "macroRoughness": 0.05,
+        "microRoughness": 0.02,
+        "bumpAmplitude": 0.01,
+        "normalPattern": "",
+        "displacementPattern": "",
+        "occlusionPattern": "",
+        "edgeWearPattern": "",
+        "notes": ""
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ],
+      "details": [],
+      "fidelityTier": "blockout",
+      "colorMaterialRecipe": {
+        "dominantAlbedo": "rgba(238, 152, 185, 1.0)",
+        "secondaryAlbedo": "rgba(255, 105, 180, 1.0)",
+        "materialClass": "plastic",
+        "materialClassConfidence": 0.9
+      }
+    },
+    {
+      "id": "headband",
+      "name": "Headband Arch Structure",
+      "level": "meso",
+      "role": "detail",
+      "importance": 0.8,
+      "confidence": 0.9,
+      "primitive": "torus",
+      "topologyClass": "assembled-solid",
+      "topologyRationale": "Thick arching overhead headband",
+      "geometryDescriptor": {
+        "topologyIntent": "Headband Arch Structure",
+        "edgeTreatment": {
+          "type": "bevel",
+          "bevelRadius": 0.02,
+          "segments": 3
+        },
+        "deformationStack": [],
+        "uvStrategy": "auto-unwrap",
+        "normalStrategy": "smooth"
+      },
+      "parent": "headphones",
+      "attachment": {
+        "parentId": "headphones",
+        "parentSocket": "socket-headband",
+        "contactType": "socket",
+        "localStart": [
+          0,
+          0,
+          0
+        ],
+        "localEnd": [
+          0,
+          0.05,
+          0
+        ],
+        "embedDepth": 0.05,
+        "overlap": 0.05,
+        "gapTolerance": 0.01,
+        "evidenceRefs": [
+          "evidence-full-body"
+        ]
+      },
+      "dimensions": {
+        "width": 1.56,
+        "height": 0.62,
+        "depth": 0.18,
+        "units": "relative",
+        "confidence": 0.9
+      },
+      "transform": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1.56,
+          0.62,
+          0.18
+        ]
+      },
+      "actionProfile": {
+        "animationRole": "prop-part",
+        "pivot": {
+          "mode": "center",
+          "localPosition": [
+            0,
+            0,
+            0
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.8
+        },
+        "transformChannels": {
+          "translate": true,
+          "rotate": true,
+          "scale": true,
+          "bend": false,
+          "twist": false,
+          "detach": false,
+          "visibility": true,
+          "materialState": true
+        },
+        "sockets": [],
+        "collider": {
+          "type": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false,
+          "notes": "proxy"
+        },
+        "constraints": [],
+        "destruction": {
+          "breakable": false,
+          "fractureGroup": "headband",
+          "seamRefs": [],
+          "detachableFragments": [],
+          "breakImpulse": 0.0,
+          "debrisMaterial": "pink-body-shell"
+        }
+      },
+      "material": "pink-body-shell",
+      "materialLayers": [
+        "pink-body-shell"
+      ],
+      "deformations": [],
+      "joints": [],
+      "seams": [],
+      "localFeatures": [],
+      "surfaceDetail": {
+        "macroRoughness": 0.05,
+        "microRoughness": 0.02,
+        "bumpAmplitude": 0.01,
+        "normalPattern": "",
+        "displacementPattern": "",
+        "occlusionPattern": "",
+        "edgeWearPattern": "",
+        "notes": ""
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ],
+      "details": [],
+      "fidelityTier": "blockout",
+      "colorMaterialRecipe": {
+        "dominantAlbedo": "rgba(238, 152, 185, 1.0)",
+        "secondaryAlbedo": "rgba(255, 105, 180, 1.0)",
+        "materialClass": "plastic",
+        "materialClassConfidence": 0.9
+      }
+    },
+    {
+      "id": "earcup-left",
+      "name": "Left Earcup Cylindrical",
+      "level": "meso",
+      "role": "detail",
+      "importance": 0.8,
+      "confidence": 0.9,
+      "primitive": "cylinder",
+      "topologyClass": "assembled-solid",
+      "topologyRationale": "Left cylindrical earcup with silver rim and pink badge",
+      "geometryDescriptor": {
+        "topologyIntent": "Left Earcup Cylindrical",
+        "edgeTreatment": {
+          "type": "bevel",
+          "bevelRadius": 0.02,
+          "segments": 3
+        },
+        "deformationStack": [],
+        "uvStrategy": "auto-unwrap",
+        "normalStrategy": "smooth"
+      },
+      "parent": "headphones",
+      "attachment": {
+        "parentId": "headphones",
+        "parentSocket": "socket-earcup-left",
+        "contactType": "socket",
+        "localStart": [
+          0,
+          0,
+          0
+        ],
+        "localEnd": [
+          0,
+          0.05,
+          0
+        ],
+        "embedDepth": 0.05,
+        "overlap": 0.05,
+        "gapTolerance": 0.01,
+        "evidenceRefs": [
+          "evidence-full-body"
+        ]
+      },
+      "dimensions": {
+        "width": 0.64,
+        "height": 0.18,
+        "depth": 0.64,
+        "units": "relative",
+        "confidence": 0.9
+      },
+      "transform": {
+        "position": [
+          -0.89,
+          -0.18,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          1.57
+        ],
+        "scale": [
+          0.64,
+          0.18,
+          0.64
+        ]
+      },
+      "actionProfile": {
+        "animationRole": "prop-part",
+        "pivot": {
+          "mode": "center",
+          "localPosition": [
+            0,
+            0,
+            0
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.8
+        },
+        "transformChannels": {
+          "translate": true,
+          "rotate": true,
+          "scale": true,
+          "bend": false,
+          "twist": false,
+          "detach": false,
+          "visibility": true,
+          "materialState": true
+        },
+        "sockets": [],
+        "collider": {
+          "type": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false,
+          "notes": "proxy"
+        },
+        "constraints": [],
+        "destruction": {
+          "breakable": false,
+          "fractureGroup": "earcup-left",
+          "seamRefs": [],
+          "detachableFragments": [],
+          "breakImpulse": 0.0,
+          "debrisMaterial": "silver-metal-rims"
+        }
+      },
+      "material": "silver-metal-rims",
+      "materialLayers": [
+        "silver-metal-rims"
+      ],
+      "deformations": [],
+      "joints": [],
+      "seams": [],
+      "localFeatures": [
+        {
+          "id": "outer-rim",
+          "name": "Outer Silver Rim",
+          "type": "bevel",
+          "description": "Satin silver outer rim"
+        },
+        {
+          "id": "badge-hex-glow",
+          "name": "Hex Badge Glow",
+          "type": "emissive",
+          "description": "Inner hexagonal emissive ring"
+        }
+      ],
+      "surfaceDetail": {
+        "macroRoughness": 0.05,
+        "microRoughness": 0.02,
+        "bumpAmplitude": 0.01,
+        "normalPattern": "",
+        "displacementPattern": "",
+        "occlusionPattern": "",
+        "edgeWearPattern": "",
+        "notes": ""
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ],
+      "details": [],
+      "fidelityTier": "blockout",
+      "colorMaterialRecipe": {
+        "dominantAlbedo": "rgba(238, 152, 185, 1.0)",
+        "secondaryAlbedo": "rgba(255, 105, 180, 1.0)",
+        "materialClass": "plastic",
+        "materialClassConfidence": 0.9
+      }
+    },
+    {
+      "id": "earcup-right",
+      "name": "Right Earcup Cylindrical",
+      "level": "meso",
+      "role": "detail",
+      "importance": 0.8,
+      "confidence": 0.9,
+      "primitive": "cylinder",
+      "topologyClass": "assembled-solid",
+      "topologyRationale": "Right cylindrical earcup mirror",
+      "geometryDescriptor": {
+        "topologyIntent": "Right Earcup Cylindrical",
+        "edgeTreatment": {
+          "type": "bevel",
+          "bevelRadius": 0.02,
+          "segments": 3
+        },
+        "deformationStack": [],
+        "uvStrategy": "auto-unwrap",
+        "normalStrategy": "smooth"
+      },
+      "parent": "headphones",
+      "attachment": {
+        "parentId": "headphones",
+        "parentSocket": "socket-earcup-right",
+        "contactType": "socket",
+        "localStart": [
+          0,
+          0,
+          0
+        ],
+        "localEnd": [
+          0,
+          0.05,
+          0
+        ],
+        "embedDepth": 0.05,
+        "overlap": 0.05,
+        "gapTolerance": 0.01,
+        "evidenceRefs": [
+          "evidence-full-body"
+        ]
+      },
+      "dimensions": {
+        "width": 0.64,
+        "height": 0.18,
+        "depth": 0.64,
+        "units": "relative",
+        "confidence": 0.9
+      },
+      "transform": {
+        "position": [
+          0.89,
+          -0.18,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          -1.57
+        ],
+        "scale": [
+          0.64,
+          0.18,
+          0.64
+        ]
+      },
+      "actionProfile": {
+        "animationRole": "prop-part",
+        "pivot": {
+          "mode": "center",
+          "localPosition": [
+            0,
+            0,
+            0
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.8
+        },
+        "transformChannels": {
+          "translate": true,
+          "rotate": true,
+          "scale": true,
+          "bend": false,
+          "twist": false,
+          "detach": false,
+          "visibility": true,
+          "materialState": true
+        },
+        "sockets": [],
+        "collider": {
+          "type": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false,
+          "notes": "proxy"
+        },
+        "constraints": [],
+        "destruction": {
+          "breakable": false,
+          "fractureGroup": "earcup-right",
+          "seamRefs": [],
+          "detachableFragments": [],
+          "breakImpulse": 0.0,
+          "debrisMaterial": "silver-metal-rims"
+        }
+      },
+      "material": "silver-metal-rims",
+      "materialLayers": [
+        "silver-metal-rims"
+      ],
+      "deformations": [],
+      "joints": [],
+      "seams": [],
+      "localFeatures": [
+        {
+          "id": "outer-rim",
+          "name": "Outer Silver Rim",
+          "type": "bevel",
+          "description": "Satin silver outer rim"
+        },
+        {
+          "id": "badge-hex-glow",
+          "name": "Hex Badge Glow",
+          "type": "emissive",
+          "description": "Inner hexagonal emissive ring"
+        }
+      ],
+      "surfaceDetail": {
+        "macroRoughness": 0.05,
+        "microRoughness": 0.02,
+        "bumpAmplitude": 0.01,
+        "normalPattern": "",
+        "displacementPattern": "",
+        "occlusionPattern": "",
+        "edgeWearPattern": "",
+        "notes": ""
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ],
+      "details": [],
+      "fidelityTier": "blockout",
+      "colorMaterialRecipe": {
+        "dominantAlbedo": "rgba(238, 152, 185, 1.0)",
+        "secondaryAlbedo": "rgba(255, 105, 180, 1.0)",
+        "materialClass": "plastic",
+        "materialClassConfidence": 0.9
+      }
+    },
+    {
+      "id": "chest-ring",
+      "name": "Concentric Glowing Pink Chest Subwoofer Ring",
+      "level": "macro",
+      "role": "body",
+      "importance": 0.8,
+      "confidence": 0.9,
+      "primitive": "torus",
+      "topologyClass": "surface-relief",
+      "topologyRationale": "Concentric glowing pink ring around black speaker cone",
+      "geometryDescriptor": {
+        "topologyIntent": "Concentric Glowing Pink Chest Subwoofer Ring",
+        "edgeTreatment": {
+          "type": "bevel",
+          "bevelRadius": 0.02,
+          "segments": 3
+        },
+        "deformationStack": [],
+        "uvStrategy": "auto-unwrap",
+        "normalStrategy": "smooth"
+      },
+      "parent": "chassis",
+      "attachment": {
+        "parentId": "chassis",
+        "parentSocket": "socket-chest-ring",
+        "contactType": "socket",
+        "localStart": [
+          0,
+          0,
+          0
+        ],
+        "localEnd": [
+          0,
+          0.05,
+          0
+        ],
+        "embedDepth": 0.05,
+        "overlap": 0.05,
+        "gapTolerance": 0.01,
+        "evidenceRefs": [
+          "evidence-full-body"
+        ]
+      },
+      "dimensions": {
+        "width": 0.64,
+        "height": 0.64,
+        "depth": 0.1,
+        "units": "relative",
+        "confidence": 0.9
+      },
+      "transform": {
+        "position": [
+          0,
+          0,
+          0.78
+        ],
+        "rotation": [
+          1.57,
+          0,
+          0
+        ],
+        "scale": [
+          0.64,
+          0.64,
+          0.1
+        ]
+      },
+      "actionProfile": {
+        "animationRole": "prop-part",
+        "pivot": {
+          "mode": "center",
+          "localPosition": [
+            0,
+            0,
+            0
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.8
+        },
+        "transformChannels": {
+          "translate": true,
+          "rotate": true,
+          "scale": true,
+          "bend": false,
+          "twist": false,
+          "detach": false,
+          "visibility": true,
+          "materialState": true
+        },
+        "sockets": [],
+        "collider": {
+          "type": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false,
+          "notes": "proxy"
+        },
+        "constraints": [],
+        "destruction": {
+          "breakable": false,
+          "fractureGroup": "chest-ring",
+          "seamRefs": [],
+          "detachableFragments": [],
+          "breakImpulse": 0.0,
+          "debrisMaterial": "emissive-pink-white"
+        }
+      },
+      "material": "emissive-pink-white",
+      "materialLayers": [
+        "emissive-pink-white"
+      ],
+      "deformations": [],
+      "joints": [],
+      "seams": [],
+      "localFeatures": [
+        {
+          "id": "pink-glow-ring",
+          "name": "Hot-Pink Glowing Ring",
+          "type": "emissive",
+          "description": "Outer emissive ring #FF2A85 intensity 2.2"
+        },
+        {
+          "id": "speaker-cone-fabric",
+          "name": "Speaker Cone Fabric",
+          "type": "groove",
+          "description": "Black speaker cone with central dome"
+        }
+      ],
+      "surfaceDetail": {
+        "macroRoughness": 0.05,
+        "microRoughness": 0.02,
+        "bumpAmplitude": 0.01,
+        "normalPattern": "",
+        "displacementPattern": "",
+        "occlusionPattern": "",
+        "edgeWearPattern": "",
+        "notes": ""
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ],
+      "details": [],
+      "fidelityTier": "blockout",
+      "colorMaterialRecipe": {
+        "dominantAlbedo": "rgba(238, 152, 185, 1.0)",
+        "secondaryAlbedo": "rgba(255, 105, 180, 1.0)",
+        "materialClass": "plastic",
+        "materialClassConfidence": 0.9
+      }
+    },
+    {
+      "id": "bumper",
+      "name": "Front Bumper with Knobs and Grilles",
+      "level": "meso",
+      "role": "detail",
+      "importance": 0.8,
+      "confidence": 0.9,
+      "primitive": "box",
+      "topologyClass": "assembled-solid",
+      "topologyRationale": "Front bumper housing twin knobs and silver grilles",
+      "geometryDescriptor": {
+        "topologyIntent": "Front Bumper with Knobs and Grilles",
+        "edgeTreatment": {
+          "type": "bevel",
+          "bevelRadius": 0.02,
+          "segments": 3
+        },
+        "deformationStack": [],
+        "uvStrategy": "auto-unwrap",
+        "normalStrategy": "smooth"
+      },
+      "parent": "chassis",
+      "attachment": {
+        "parentId": "chassis",
+        "parentSocket": "socket-bumper",
+        "contactType": "socket",
+        "localStart": [
+          0,
+          0,
+          0
+        ],
+        "localEnd": [
+          0,
+          0.05,
+          0
+        ],
+        "embedDepth": 0.05,
+        "overlap": 0.05,
+        "gapTolerance": 0.01,
+        "evidenceRefs": [
+          "evidence-full-body"
+        ]
+      },
+      "dimensions": {
+        "width": 1.1,
+        "height": 0.28,
+        "depth": 0.18,
+        "units": "relative",
+        "confidence": 0.9
+      },
+      "transform": {
+        "position": [
+          0,
+          -0.35,
+          0.85
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1.1,
+          0.28,
+          0.18
+        ]
+      },
+      "actionProfile": {
+        "animationRole": "prop-part",
+        "pivot": {
+          "mode": "center",
+          "localPosition": [
+            0,
+            0,
+            0
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.8
+        },
+        "transformChannels": {
+          "translate": true,
+          "rotate": true,
+          "scale": true,
+          "bend": false,
+          "twist": false,
+          "detach": false,
+          "visibility": true,
+          "materialState": true
+        },
+        "sockets": [],
+        "collider": {
+          "type": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false,
+          "notes": "proxy"
+        },
+        "constraints": [],
+        "destruction": {
+          "breakable": false,
+          "fractureGroup": "bumper",
+          "seamRefs": [],
+          "detachableFragments": [],
+          "breakImpulse": 0.0,
+          "debrisMaterial": "pink-body-shell"
+        }
+      },
+      "material": "pink-body-shell",
+      "materialLayers": [
+        "pink-body-shell"
+      ],
+      "deformations": [],
+      "joints": [],
+      "seams": [],
+      "localFeatures": [
+        {
+          "id": "knob-left-specular",
+          "name": "Left Bumper Knob",
+          "type": "bevel",
+          "description": "Circular silver headlight knob"
+        },
+        {
+          "id": "knob-right-specular",
+          "name": "Right Bumper Knob",
+          "type": "bevel",
+          "description": "Circular silver headlight knob"
+        },
+        {
+          "id": "grille-left-slats",
+          "name": "Left Grille Slats",
+          "type": "groove",
+          "description": "Lower rectangular silver grille with horizontal slats"
+        },
+        {
+          "id": "grille-right-slats",
+          "name": "Right Grille Slats",
+          "type": "groove",
+          "description": "Lower rectangular silver grille mirror"
+        }
+      ],
+      "surfaceDetail": {
+        "macroRoughness": 0.05,
+        "microRoughness": 0.02,
+        "bumpAmplitude": 0.01,
+        "normalPattern": "",
+        "displacementPattern": "",
+        "occlusionPattern": "",
+        "edgeWearPattern": "",
+        "notes": ""
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ],
+      "details": [],
+      "fidelityTier": "blockout",
+      "colorMaterialRecipe": {
+        "dominantAlbedo": "rgba(238, 152, 185, 1.0)",
+        "secondaryAlbedo": "rgba(255, 105, 180, 1.0)",
+        "materialClass": "plastic",
+        "materialClassConfidence": 0.9
+      }
+    },
+    {
+      "id": "radio-module",
+      "name": "Right-Side Radio Module with Antennas",
+      "level": "meso",
+      "role": "detail",
+      "importance": 0.8,
+      "confidence": 0.9,
+      "primitive": "box",
+      "topologyClass": "assembled-solid",
+      "topologyRationale": "Tactical radio module with toggle switches and dual whip antennas",
+      "geometryDescriptor": {
+        "topologyIntent": "Right-Side Radio Module with Antennas",
+        "edgeTreatment": {
+          "type": "bevel",
+          "bevelRadius": 0.02,
+          "segments": 3
+        },
+        "deformationStack": [],
+        "uvStrategy": "auto-unwrap",
+        "normalStrategy": "smooth"
+      },
+      "parent": "chassis",
+      "attachment": {
+        "parentId": "chassis",
+        "parentSocket": "socket-radio-module",
+        "contactType": "socket",
+        "localStart": [
+          0,
+          0,
+          0
+        ],
+        "localEnd": [
+          0,
+          0.05,
+          0
+        ],
+        "embedDepth": 0.05,
+        "overlap": 0.05,
+        "gapTolerance": 0.01,
+        "evidenceRefs": [
+          "evidence-full-body"
+        ]
+      },
+      "dimensions": {
+        "width": 0.22,
+        "height": 0.48,
+        "depth": 0.36,
+        "units": "relative",
+        "confidence": 0.9
+      },
+      "transform": {
+        "position": [
+          0.96,
+          0.08,
+          -0.12
+        ],
+        "rotation": [
+          0,
+          -0.15,
+          0
+        ],
+        "scale": [
+          0.22,
+          0.48,
+          0.36
+        ]
+      },
+      "actionProfile": {
+        "animationRole": "prop-part",
+        "pivot": {
+          "mode": "center",
+          "localPosition": [
+            0,
+            0,
+            0
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.8
+        },
+        "transformChannels": {
+          "translate": true,
+          "rotate": true,
+          "scale": true,
+          "bend": false,
+          "twist": false,
+          "detach": false,
+          "visibility": true,
+          "materialState": true
+        },
+        "sockets": [],
+        "collider": {
+          "type": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false,
+          "notes": "proxy"
+        },
+        "constraints": [],
+        "destruction": {
+          "breakable": false,
+          "fractureGroup": "radio-module",
+          "seamRefs": [],
+          "detachableFragments": [],
+          "breakImpulse": 0.0,
+          "debrisMaterial": "silver-metal-rims"
+        }
+      },
+      "material": "silver-metal-rims",
+      "materialLayers": [
+        "silver-metal-rims"
+      ],
+      "deformations": [],
+      "joints": [],
+      "seams": [],
+      "localFeatures": [
+        {
+          "id": "box-tactical",
+          "name": "Tactical Box",
+          "type": "contour",
+          "description": "Dark gray radio box on side panel"
+        },
+        {
+          "id": "toggle-switches",
+          "name": "Toggle Switches",
+          "type": "bevel",
+          "description": "Three small capsule switches"
+        },
+        {
+          "id": "antenna-dual",
+          "name": "Dual Whip Antennas",
+          "type": "contour",
+          "description": "Two vertical antennas with ball tips"
+        }
+      ],
+      "surfaceDetail": {
+        "macroRoughness": 0.05,
+        "microRoughness": 0.02,
+        "bumpAmplitude": 0.01,
+        "normalPattern": "",
+        "displacementPattern": "",
+        "occlusionPattern": "",
+        "edgeWearPattern": "",
+        "notes": ""
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ],
+      "details": [],
+      "fidelityTier": "blockout",
+      "colorMaterialRecipe": {
+        "dominantAlbedo": "rgba(238, 152, 185, 1.0)",
+        "secondaryAlbedo": "rgba(255, 105, 180, 1.0)",
+        "materialClass": "plastic",
+        "materialClassConfidence": 0.9
+      }
+    },
+    {
+      "id": "wheel-FL",
+      "name": "Front Left Wheel Assembly",
+      "level": "meso",
+      "role": "detail",
+      "importance": 0.8,
+      "confidence": 0.9,
+      "primitive": "cylinder",
+      "topologyClass": "assembled-solid",
+      "topologyRationale": "Wide black rubber tire #1C1C1E roughness 0.85 with 6-spoke silver rim",
+      "geometryDescriptor": {
+        "topologyIntent": "Front Left Wheel Assembly",
+        "edgeTreatment": {
+          "type": "bevel",
+          "bevelRadius": 0.02,
+          "segments": 3
+        },
+        "deformationStack": [],
+        "uvStrategy": "auto-unwrap",
+        "normalStrategy": "smooth"
+      },
+      "parent": "chassis",
+      "attachment": {
+        "parentId": "chassis",
+        "parentSocket": "socket-wheel-FL",
+        "contactType": "socket",
+        "localStart": [
+          0,
+          0,
+          0
+        ],
+        "localEnd": [
+          0,
+          0.05,
+          0
+        ],
+        "embedDepth": 0.05,
+        "overlap": 0.05,
+        "gapTolerance": 0.01,
+        "evidenceRefs": [
+          "evidence-full-body"
+        ]
+      },
+      "dimensions": {
+        "width": 0.64,
+        "height": 0.24,
+        "depth": 0.64,
+        "units": "relative",
+        "confidence": 0.9
+      },
+      "transform": {
+        "position": [
+          -0.92,
+          -0.35,
+          0.72
+        ],
+        "rotation": [
+          0,
+          0,
+          1.57
+        ],
+        "scale": [
+          0.64,
+          0.24,
+          0.64
+        ]
+      },
+      "actionProfile": {
+        "animationRole": "prop-part",
+        "pivot": {
+          "mode": "center",
+          "localPosition": [
+            0,
+            0,
+            0
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.8
+        },
+        "transformChannels": {
+          "translate": true,
+          "rotate": true,
+          "scale": true,
+          "bend": false,
+          "twist": false,
+          "detach": false,
+          "visibility": true,
+          "materialState": true
+        },
+        "sockets": [],
+        "collider": {
+          "type": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false,
+          "notes": "proxy"
+        },
+        "constraints": [],
+        "destruction": {
+          "breakable": false,
+          "fractureGroup": "wheel-FL",
+          "seamRefs": [],
+          "detachableFragments": [],
+          "breakImpulse": 0.0,
+          "debrisMaterial": "rubber-tires"
+        }
+      },
+      "material": "rubber-tires",
+      "materialLayers": [
+        "rubber-tires"
+      ],
+      "deformations": [],
+      "joints": [],
+      "seams": [],
+      "localFeatures": [
+        {
+          "id": "tire-tread",
+          "name": "Tire Tread Blocks",
+          "type": "contour",
+          "description": "Deep tread blocks around tire"
+        },
+        {
+          "id": "rim-spokes-star",
+          "name": "6-Spoke Star Rim",
+          "type": "bevel",
+          "description": "Silver star spokes #D1D5DB metalness 0.85"
+        }
+      ],
+      "surfaceDetail": {
+        "macroRoughness": 0.05,
+        "microRoughness": 0.02,
+        "bumpAmplitude": 0.01,
+        "normalPattern": "",
+        "displacementPattern": "",
+        "occlusionPattern": "",
+        "edgeWearPattern": "",
+        "notes": ""
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ],
+      "details": [],
+      "fidelityTier": "blockout",
+      "colorMaterialRecipe": {
+        "dominantAlbedo": "rgba(238, 152, 185, 1.0)",
+        "secondaryAlbedo": "rgba(255, 105, 180, 1.0)",
+        "materialClass": "plastic",
+        "materialClassConfidence": 0.9
+      }
+    },
+    {
+      "id": "wheel-FR",
+      "name": "Front Right Wheel Assembly",
+      "level": "meso",
+      "role": "detail",
+      "importance": 0.8,
+      "confidence": 0.9,
+      "primitive": "cylinder",
+      "topologyClass": "assembled-solid",
+      "topologyRationale": "Wide black rubber tire with 6-spoke silver rim",
+      "geometryDescriptor": {
+        "topologyIntent": "Front Right Wheel Assembly",
+        "edgeTreatment": {
+          "type": "bevel",
+          "bevelRadius": 0.02,
+          "segments": 3
+        },
+        "deformationStack": [],
+        "uvStrategy": "auto-unwrap",
+        "normalStrategy": "smooth"
+      },
+      "parent": "chassis",
+      "attachment": {
+        "parentId": "chassis",
+        "parentSocket": "socket-wheel-FR",
+        "contactType": "socket",
+        "localStart": [
+          0,
+          0,
+          0
+        ],
+        "localEnd": [
+          0,
+          0.05,
+          0
+        ],
+        "embedDepth": 0.05,
+        "overlap": 0.05,
+        "gapTolerance": 0.01,
+        "evidenceRefs": [
+          "evidence-full-body"
+        ]
+      },
+      "dimensions": {
+        "width": 0.64,
+        "height": 0.24,
+        "depth": 0.64,
+        "units": "relative",
+        "confidence": 0.9
+      },
+      "transform": {
+        "position": [
+          0.92,
+          -0.35,
+          0.72
+        ],
+        "rotation": [
+          0,
+          0,
+          -1.57
+        ],
+        "scale": [
+          0.64,
+          0.24,
+          0.64
+        ]
+      },
+      "actionProfile": {
+        "animationRole": "prop-part",
+        "pivot": {
+          "mode": "center",
+          "localPosition": [
+            0,
+            0,
+            0
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.8
+        },
+        "transformChannels": {
+          "translate": true,
+          "rotate": true,
+          "scale": true,
+          "bend": false,
+          "twist": false,
+          "detach": false,
+          "visibility": true,
+          "materialState": true
+        },
+        "sockets": [],
+        "collider": {
+          "type": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false,
+          "notes": "proxy"
+        },
+        "constraints": [],
+        "destruction": {
+          "breakable": false,
+          "fractureGroup": "wheel-FR",
+          "seamRefs": [],
+          "detachableFragments": [],
+          "breakImpulse": 0.0,
+          "debrisMaterial": "rubber-tires"
+        }
+      },
+      "material": "rubber-tires",
+      "materialLayers": [
+        "rubber-tires"
+      ],
+      "deformations": [],
+      "joints": [],
+      "seams": [],
+      "localFeatures": [
+        {
+          "id": "tire-tread",
+          "name": "Tire Tread Blocks",
+          "type": "contour",
+          "description": "Deep tread blocks"
+        },
+        {
+          "id": "rim-spokes-star",
+          "name": "6-Spoke Star Rim",
+          "type": "bevel",
+          "description": "Silver star spokes"
+        }
+      ],
+      "surfaceDetail": {
+        "macroRoughness": 0.05,
+        "microRoughness": 0.02,
+        "bumpAmplitude": 0.01,
+        "normalPattern": "",
+        "displacementPattern": "",
+        "occlusionPattern": "",
+        "edgeWearPattern": "",
+        "notes": ""
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ],
+      "details": [],
+      "fidelityTier": "blockout",
+      "colorMaterialRecipe": {
+        "dominantAlbedo": "rgba(238, 152, 185, 1.0)",
+        "secondaryAlbedo": "rgba(255, 105, 180, 1.0)",
+        "materialClass": "plastic",
+        "materialClassConfidence": 0.9
+      }
+    },
+    {
+      "id": "wheel-RL",
+      "name": "Rear Left Wheel Assembly",
+      "level": "meso",
+      "role": "detail",
+      "importance": 0.8,
+      "confidence": 0.9,
+      "primitive": "cylinder",
+      "topologyClass": "assembled-solid",
+      "topologyRationale": "Wide black rubber tire with 6-spoke silver rim",
+      "geometryDescriptor": {
+        "topologyIntent": "Rear Left Wheel Assembly",
+        "edgeTreatment": {
+          "type": "bevel",
+          "bevelRadius": 0.02,
+          "segments": 3
+        },
+        "deformationStack": [],
+        "uvStrategy": "auto-unwrap",
+        "normalStrategy": "smooth"
+      },
+      "parent": "chassis",
+      "attachment": {
+        "parentId": "chassis",
+        "parentSocket": "socket-wheel-RL",
+        "contactType": "socket",
+        "localStart": [
+          0,
+          0,
+          0
+        ],
+        "localEnd": [
+          0,
+          0.05,
+          0
+        ],
+        "embedDepth": 0.05,
+        "overlap": 0.05,
+        "gapTolerance": 0.01,
+        "evidenceRefs": [
+          "evidence-full-body"
+        ]
+      },
+      "dimensions": {
+        "width": 0.64,
+        "height": 0.24,
+        "depth": 0.64,
+        "units": "relative",
+        "confidence": 0.9
+      },
+      "transform": {
+        "position": [
+          -0.92,
+          -0.35,
+          -0.72
+        ],
+        "rotation": [
+          0,
+          0,
+          1.57
+        ],
+        "scale": [
+          0.64,
+          0.24,
+          0.64
+        ]
+      },
+      "actionProfile": {
+        "animationRole": "prop-part",
+        "pivot": {
+          "mode": "center",
+          "localPosition": [
+            0,
+            0,
+            0
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.8
+        },
+        "transformChannels": {
+          "translate": true,
+          "rotate": true,
+          "scale": true,
+          "bend": false,
+          "twist": false,
+          "detach": false,
+          "visibility": true,
+          "materialState": true
+        },
+        "sockets": [],
+        "collider": {
+          "type": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false,
+          "notes": "proxy"
+        },
+        "constraints": [],
+        "destruction": {
+          "breakable": false,
+          "fractureGroup": "wheel-RL",
+          "seamRefs": [],
+          "detachableFragments": [],
+          "breakImpulse": 0.0,
+          "debrisMaterial": "rubber-tires"
+        }
+      },
+      "material": "rubber-tires",
+      "materialLayers": [
+        "rubber-tires"
+      ],
+      "deformations": [],
+      "joints": [],
+      "seams": [],
+      "localFeatures": [
+        {
+          "id": "tire-tread",
+          "name": "Tire Tread Blocks",
+          "type": "contour",
+          "description": "Deep tread blocks"
+        },
+        {
+          "id": "rim-spokes-star",
+          "name": "6-Spoke Star Rim",
+          "type": "bevel",
+          "description": "Silver star spokes"
+        }
+      ],
+      "surfaceDetail": {
+        "macroRoughness": 0.05,
+        "microRoughness": 0.02,
+        "bumpAmplitude": 0.01,
+        "normalPattern": "",
+        "displacementPattern": "",
+        "occlusionPattern": "",
+        "edgeWearPattern": "",
+        "notes": ""
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ],
+      "details": [],
+      "fidelityTier": "blockout",
+      "colorMaterialRecipe": {
+        "dominantAlbedo": "rgba(238, 152, 185, 1.0)",
+        "secondaryAlbedo": "rgba(255, 105, 180, 1.0)",
+        "materialClass": "plastic",
+        "materialClassConfidence": 0.9
+      }
+    },
+    {
+      "id": "wheel-RR",
+      "name": "Rear Right Wheel Assembly",
+      "level": "meso",
+      "role": "detail",
+      "importance": 0.8,
+      "confidence": 0.9,
+      "primitive": "cylinder",
+      "topologyClass": "assembled-solid",
+      "topologyRationale": "Wide black rubber tire with 6-spoke silver rim",
+      "geometryDescriptor": {
+        "topologyIntent": "Rear Right Wheel Assembly",
+        "edgeTreatment": {
+          "type": "bevel",
+          "bevelRadius": 0.02,
+          "segments": 3
+        },
+        "deformationStack": [],
+        "uvStrategy": "auto-unwrap",
+        "normalStrategy": "smooth"
+      },
+      "parent": "chassis",
+      "attachment": {
+        "parentId": "chassis",
+        "parentSocket": "socket-wheel-RR",
+        "contactType": "socket",
+        "localStart": [
+          0,
+          0,
+          0
+        ],
+        "localEnd": [
+          0,
+          0.05,
+          0
+        ],
+        "embedDepth": 0.05,
+        "overlap": 0.05,
+        "gapTolerance": 0.01,
+        "evidenceRefs": [
+          "evidence-full-body"
+        ]
+      },
+      "dimensions": {
+        "width": 0.64,
+        "height": 0.24,
+        "depth": 0.64,
+        "units": "relative",
+        "confidence": 0.9
+      },
+      "transform": {
+        "position": [
+          0.92,
+          -0.35,
+          -0.72
+        ],
+        "rotation": [
+          0,
+          0,
+          -1.57
+        ],
+        "scale": [
+          0.64,
+          0.24,
+          0.64
+        ]
+      },
+      "actionProfile": {
+        "animationRole": "prop-part",
+        "pivot": {
+          "mode": "center",
+          "localPosition": [
+            0,
+            0,
+            0
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.8
+        },
+        "transformChannels": {
+          "translate": true,
+          "rotate": true,
+          "scale": true,
+          "bend": false,
+          "twist": false,
+          "detach": false,
+          "visibility": true,
+          "materialState": true
+        },
+        "sockets": [],
+        "collider": {
+          "type": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false,
+          "notes": "proxy"
+        },
+        "constraints": [],
+        "destruction": {
+          "breakable": false,
+          "fractureGroup": "wheel-RR",
+          "seamRefs": [],
+          "detachableFragments": [],
+          "breakImpulse": 0.0,
+          "debrisMaterial": "rubber-tires"
+        }
+      },
+      "material": "rubber-tires",
+      "materialLayers": [
+        "rubber-tires"
+      ],
+      "deformations": [],
+      "joints": [],
+      "seams": [],
+      "localFeatures": [
+        {
+          "id": "tire-tread",
+          "name": "Tire Tread Blocks",
+          "type": "contour",
+          "description": "Deep tread blocks"
+        },
+        {
+          "id": "rim-spokes-star",
+          "name": "6-Spoke Star Rim",
+          "type": "bevel",
+          "description": "Silver star spokes"
+        }
+      ],
+      "surfaceDetail": {
+        "macroRoughness": 0.05,
+        "microRoughness": 0.02,
+        "bumpAmplitude": 0.01,
+        "normalPattern": "",
+        "displacementPattern": "",
+        "occlusionPattern": "",
+        "edgeWearPattern": "",
+        "notes": ""
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ],
+      "details": [],
+      "fidelityTier": "blockout",
+      "colorMaterialRecipe": {
+        "dominantAlbedo": "rgba(238, 152, 185, 1.0)",
+        "secondaryAlbedo": "rgba(255, 105, 180, 1.0)",
+        "materialClass": "plastic",
+        "materialClassConfidence": 0.9
+      }
+    },
+    {
+      "id": "bumper-knob-left",
+      "name": "Left Bumper Knob Headlight",
+      "level": "meso",
+      "role": "detail",
+      "importance": 0.8,
+      "confidence": 0.9,
+      "primitive": "cylinder",
+      "topologyClass": "assembled-solid",
+      "topologyRationale": "Twin silver headlight knob left",
+      "geometryDescriptor": {
+        "topologyIntent": "Left Bumper Knob Headlight",
+        "edgeTreatment": {
+          "type": "bevel",
+          "bevelRadius": 0.02,
+          "segments": 3
+        },
+        "deformationStack": [],
+        "uvStrategy": "auto-unwrap",
+        "normalStrategy": "smooth"
+      },
+      "parent": "bumper",
+      "attachment": {
+        "parentId": "bumper",
+        "parentSocket": "socket-bumper-knob-left",
+        "contactType": "socket",
+        "localStart": [
+          0,
+          0,
+          0
+        ],
+        "localEnd": [
+          0,
+          0.05,
+          0
+        ],
+        "embedDepth": 0.05,
+        "overlap": 0.05,
+        "gapTolerance": 0.01,
+        "evidenceRefs": [
+          "evidence-full-body"
+        ]
+      },
+      "dimensions": {
+        "width": 0.15,
+        "height": 0.04,
+        "depth": 0.15,
+        "units": "relative",
+        "confidence": 0.9
+      },
+      "transform": {
+        "position": [
+          -0.32,
+          0.02,
+          0.12
+        ],
+        "rotation": [
+          1.57,
+          0,
+          0
+        ],
+        "scale": [
+          0.15,
+          0.04,
+          0.15
+        ]
+      },
+      "actionProfile": {
+        "animationRole": "prop-part",
+        "pivot": {
+          "mode": "center",
+          "localPosition": [
+            0,
+            0,
+            0
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.8
+        },
+        "transformChannels": {
+          "translate": true,
+          "rotate": true,
+          "scale": true,
+          "bend": false,
+          "twist": false,
+          "detach": false,
+          "visibility": true,
+          "materialState": true
+        },
+        "sockets": [],
+        "collider": {
+          "type": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false,
+          "notes": "proxy"
+        },
+        "constraints": [],
+        "destruction": {
+          "breakable": false,
+          "fractureGroup": "bumper-knob-left",
+          "seamRefs": [],
+          "detachableFragments": [],
+          "breakImpulse": 0.0,
+          "debrisMaterial": "silver-metal-rims"
+        }
+      },
+      "material": "silver-metal-rims",
+      "materialLayers": [
+        "silver-metal-rims"
+      ],
+      "deformations": [],
+      "joints": [],
+      "seams": [],
+      "localFeatures": [],
+      "surfaceDetail": {
+        "macroRoughness": 0.05,
+        "microRoughness": 0.02,
+        "bumpAmplitude": 0.01,
+        "normalPattern": "",
+        "displacementPattern": "",
+        "occlusionPattern": "",
+        "edgeWearPattern": "",
+        "notes": ""
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ],
+      "details": [],
+      "fidelityTier": "blockout",
+      "colorMaterialRecipe": {
+        "dominantAlbedo": "rgba(238, 152, 185, 1.0)",
+        "secondaryAlbedo": "rgba(255, 105, 180, 1.0)",
+        "materialClass": "plastic",
+        "materialClassConfidence": 0.9
+      }
+    },
+    {
+      "id": "bumper-knob-right",
+      "name": "Right Bumper Knob Headlight",
+      "level": "meso",
+      "role": "detail",
+      "importance": 0.8,
+      "confidence": 0.9,
+      "primitive": "cylinder",
+      "topologyClass": "assembled-solid",
+      "topologyRationale": "Twin silver headlight knob right",
+      "geometryDescriptor": {
+        "topologyIntent": "Right Bumper Knob Headlight",
+        "edgeTreatment": {
+          "type": "bevel",
+          "bevelRadius": 0.02,
+          "segments": 3
+        },
+        "deformationStack": [],
+        "uvStrategy": "auto-unwrap",
+        "normalStrategy": "smooth"
+      },
+      "parent": "bumper",
+      "attachment": {
+        "parentId": "bumper",
+        "parentSocket": "socket-bumper-knob-right",
+        "contactType": "socket",
+        "localStart": [
+          0,
+          0,
+          0
+        ],
+        "localEnd": [
+          0,
+          0.05,
+          0
+        ],
+        "embedDepth": 0.05,
+        "overlap": 0.05,
+        "gapTolerance": 0.01,
+        "evidenceRefs": [
+          "evidence-full-body"
+        ]
+      },
+      "dimensions": {
+        "width": 0.15,
+        "height": 0.04,
+        "depth": 0.15,
+        "units": "relative",
+        "confidence": 0.9
+      },
+      "transform": {
+        "position": [
+          0.32,
+          0.02,
+          0.12
+        ],
+        "rotation": [
+          1.57,
+          0,
+          0
+        ],
+        "scale": [
+          0.15,
+          0.04,
+          0.15
+        ]
+      },
+      "actionProfile": {
+        "animationRole": "prop-part",
+        "pivot": {
+          "mode": "center",
+          "localPosition": [
+            0,
+            0,
+            0
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.8
+        },
+        "transformChannels": {
+          "translate": true,
+          "rotate": true,
+          "scale": true,
+          "bend": false,
+          "twist": false,
+          "detach": false,
+          "visibility": true,
+          "materialState": true
+        },
+        "sockets": [],
+        "collider": {
+          "type": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false,
+          "notes": "proxy"
+        },
+        "constraints": [],
+        "destruction": {
+          "breakable": false,
+          "fractureGroup": "bumper-knob-right",
+          "seamRefs": [],
+          "detachableFragments": [],
+          "breakImpulse": 0.0,
+          "debrisMaterial": "silver-metal-rims"
+        }
+      },
+      "material": "silver-metal-rims",
+      "materialLayers": [
+        "silver-metal-rims"
+      ],
+      "deformations": [],
+      "joints": [],
+      "seams": [],
+      "localFeatures": [],
+      "surfaceDetail": {
+        "macroRoughness": 0.05,
+        "microRoughness": 0.02,
+        "bumpAmplitude": 0.01,
+        "normalPattern": "",
+        "displacementPattern": "",
+        "occlusionPattern": "",
+        "edgeWearPattern": "",
+        "notes": ""
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ],
+      "details": [],
+      "fidelityTier": "blockout",
+      "colorMaterialRecipe": {
+        "dominantAlbedo": "rgba(238, 152, 185, 1.0)",
+        "secondaryAlbedo": "rgba(255, 105, 180, 1.0)",
+        "materialClass": "plastic",
+        "materialClassConfidence": 0.9
+      }
+    },
+    {
+      "id": "radio-antenna-1",
+      "name": "Whip Antenna 1",
+      "level": "meso",
+      "role": "detail",
+      "importance": 0.8,
+      "confidence": 0.9,
+      "primitive": "cylinder",
+      "topologyClass": "assembled-solid",
+      "topologyRationale": "Vertical whip antenna with ball tip",
+      "geometryDescriptor": {
+        "topologyIntent": "Whip Antenna 1",
+        "edgeTreatment": {
+          "type": "bevel",
+          "bevelRadius": 0.02,
+          "segments": 3
+        },
+        "deformationStack": [],
+        "uvStrategy": "auto-unwrap",
+        "normalStrategy": "smooth"
+      },
+      "parent": "radio-module",
+      "attachment": {
+        "parentId": "radio-module",
+        "parentSocket": "socket-radio-antenna-1",
+        "contactType": "socket",
+        "localStart": [
+          0,
+          0,
+          0
+        ],
+        "localEnd": [
+          0,
+          0.05,
+          0
+        ],
+        "embedDepth": 0.05,
+        "overlap": 0.05,
+        "gapTolerance": 0.01,
+        "evidenceRefs": [
+          "evidence-full-body"
+        ]
+      },
+      "dimensions": {
+        "width": 0.016,
+        "height": 0.44,
+        "depth": 0.016,
+        "units": "relative",
+        "confidence": 0.9
+      },
+      "transform": {
+        "position": [
+          -0.0,
+          0.36,
+          0.08
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          0.016,
+          0.44,
+          0.016
+        ]
+      },
+      "actionProfile": {
+        "animationRole": "prop-part",
+        "pivot": {
+          "mode": "center",
+          "localPosition": [
+            0,
+            0,
+            0
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.8
+        },
+        "transformChannels": {
+          "translate": true,
+          "rotate": true,
+          "scale": true,
+          "bend": false,
+          "twist": false,
+          "detach": false,
+          "visibility": true,
+          "materialState": true
+        },
+        "sockets": [],
+        "collider": {
+          "type": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false,
+          "notes": "proxy"
+        },
+        "constraints": [],
+        "destruction": {
+          "breakable": false,
+          "fractureGroup": "radio-antenna-1",
+          "seamRefs": [],
+          "detachableFragments": [],
+          "breakImpulse": 0.0,
+          "debrisMaterial": "silver-metal-rims"
+        }
+      },
+      "material": "silver-metal-rims",
+      "materialLayers": [
+        "silver-metal-rims"
+      ],
+      "deformations": [],
+      "joints": [],
+      "seams": [],
+      "localFeatures": [],
+      "surfaceDetail": {
+        "macroRoughness": 0.05,
+        "microRoughness": 0.02,
+        "bumpAmplitude": 0.01,
+        "normalPattern": "",
+        "displacementPattern": "",
+        "occlusionPattern": "",
+        "edgeWearPattern": "",
+        "notes": ""
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ],
+      "details": [],
+      "fidelityTier": "blockout",
+      "colorMaterialRecipe": {
+        "dominantAlbedo": "rgba(238, 152, 185, 1.0)",
+        "secondaryAlbedo": "rgba(255, 105, 180, 1.0)",
+        "materialClass": "plastic",
+        "materialClassConfidence": 0.9
+      }
+    },
+    {
+      "id": "radio-antenna-2",
+      "name": "Whip Antenna 2",
+      "level": "meso",
+      "role": "detail",
+      "importance": 0.8,
+      "confidence": 0.9,
+      "primitive": "cylinder",
+      "topologyClass": "assembled-solid",
+      "topologyRationale": "Vertical whip antenna second",
+      "geometryDescriptor": {
+        "topologyIntent": "Whip Antenna 2",
+        "edgeTreatment": {
+          "type": "bevel",
+          "bevelRadius": 0.02,
+          "segments": 3
+        },
+        "deformationStack": [],
+        "uvStrategy": "auto-unwrap",
+        "normalStrategy": "smooth"
+      },
+      "parent": "radio-module",
+      "attachment": {
+        "parentId": "radio-module",
+        "parentSocket": "socket-radio-antenna-2",
+        "contactType": "socket",
+        "localStart": [
+          0,
+          0,
+          0
+        ],
+        "localEnd": [
+          0,
+          0.05,
+          0
+        ],
+        "embedDepth": 0.05,
+        "overlap": 0.05,
+        "gapTolerance": 0.01,
+        "evidenceRefs": [
+          "evidence-full-body"
+        ]
+      },
+      "dimensions": {
+        "width": 0.016,
+        "height": 0.44,
+        "depth": 0.016,
+        "units": "relative",
+        "confidence": 0.9
+      },
+      "transform": {
+        "position": [
+          0.0,
+          0.36,
+          -0.08
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          0.016,
+          0.44,
+          0.016
+        ]
+      },
+      "actionProfile": {
+        "animationRole": "prop-part",
+        "pivot": {
+          "mode": "center",
+          "localPosition": [
+            0,
+            0,
+            0
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.8
+        },
+        "transformChannels": {
+          "translate": true,
+          "rotate": true,
+          "scale": true,
+          "bend": false,
+          "twist": false,
+          "detach": false,
+          "visibility": true,
+          "materialState": true
+        },
+        "sockets": [],
+        "collider": {
+          "type": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false,
+          "notes": "proxy"
+        },
+        "constraints": [],
+        "destruction": {
+          "breakable": false,
+          "fractureGroup": "radio-antenna-2",
+          "seamRefs": [],
+          "detachableFragments": [],
+          "breakImpulse": 0.0,
+          "debrisMaterial": "silver-metal-rims"
+        }
+      },
+      "material": "silver-metal-rims",
+      "materialLayers": [
+        "silver-metal-rims"
+      ],
+      "deformations": [],
+      "joints": [],
+      "seams": [],
+      "localFeatures": [],
+      "surfaceDetail": {
+        "macroRoughness": 0.05,
+        "microRoughness": 0.02,
+        "bumpAmplitude": 0.01,
+        "normalPattern": "",
+        "displacementPattern": "",
+        "occlusionPattern": "",
+        "edgeWearPattern": "",
+        "notes": ""
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ],
+      "details": [],
+      "fidelityTier": "blockout",
+      "colorMaterialRecipe": {
+        "dominantAlbedo": "rgba(238, 152, 185, 1.0)",
+        "secondaryAlbedo": "rgba(255, 105, 180, 1.0)",
+        "materialClass": "plastic",
+        "materialClassConfidence": 0.9
+      }
+    },
+    {
+      "id": "bumper-grille-left",
+      "name": "Left Silver Speaker Grille",
+      "level": "meso",
+      "role": "detail",
+      "importance": 0.8,
+      "confidence": 0.9,
+      "primitive": "box",
+      "topologyClass": "surface-relief",
+      "topologyRationale": "Lower rectangular silver grille left with slats",
+      "geometryDescriptor": {
+        "topologyIntent": "Left Silver Speaker Grille",
+        "edgeTreatment": {
+          "type": "bevel",
+          "bevelRadius": 0.02,
+          "segments": 3
+        },
+        "deformationStack": [],
+        "uvStrategy": "auto-unwrap",
+        "normalStrategy": "smooth"
+      },
+      "parent": "bumper",
+      "attachment": {
+        "parentId": "bumper",
+        "parentSocket": "socket-bumper-grille-left",
+        "contactType": "socket",
+        "localStart": [
+          0,
+          0,
+          0
+        ],
+        "localEnd": [
+          0,
+          0.05,
+          0
+        ],
+        "embedDepth": 0.05,
+        "overlap": 0.05,
+        "gapTolerance": 0.01,
+        "evidenceRefs": [
+          "evidence-full-body"
+        ]
+      },
+      "dimensions": {
+        "width": 0.28,
+        "height": 0.13,
+        "depth": 0.02,
+        "units": "relative",
+        "confidence": 0.9
+      },
+      "transform": {
+        "position": [
+          -0.28,
+          -0.11,
+          0.1
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          0.28,
+          0.13,
+          0.02
+        ]
+      },
+      "actionProfile": {
+        "animationRole": "prop-part",
+        "pivot": {
+          "mode": "center",
+          "localPosition": [
+            0,
+            0,
+            0
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.8
+        },
+        "transformChannels": {
+          "translate": true,
+          "rotate": true,
+          "scale": true,
+          "bend": false,
+          "twist": false,
+          "detach": false,
+          "visibility": true,
+          "materialState": true
+        },
+        "sockets": [],
+        "collider": {
+          "type": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false,
+          "notes": "proxy"
+        },
+        "constraints": [],
+        "destruction": {
+          "breakable": false,
+          "fractureGroup": "bumper-grille-left",
+          "seamRefs": [],
+          "detachableFragments": [],
+          "breakImpulse": 0.0,
+          "debrisMaterial": "silver-metal-rims"
+        }
+      },
+      "material": "silver-metal-rims",
+      "materialLayers": [
+        "silver-metal-rims"
+      ],
+      "deformations": [],
+      "joints": [],
+      "seams": [],
+      "localFeatures": [],
+      "surfaceDetail": {
+        "macroRoughness": 0.05,
+        "microRoughness": 0.02,
+        "bumpAmplitude": 0.01,
+        "normalPattern": "",
+        "displacementPattern": "",
+        "occlusionPattern": "",
+        "edgeWearPattern": "",
+        "notes": ""
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ],
+      "details": [],
+      "fidelityTier": "blockout",
+      "colorMaterialRecipe": {
+        "dominantAlbedo": "rgba(238, 152, 185, 1.0)",
+        "secondaryAlbedo": "rgba(255, 105, 180, 1.0)",
+        "materialClass": "plastic",
+        "materialClassConfidence": 0.9
+      }
+    },
+    {
+      "id": "bumper-grille-right",
+      "name": "Right Silver Speaker Grille",
+      "level": "meso",
+      "role": "detail",
+      "importance": 0.8,
+      "confidence": 0.9,
+      "primitive": "box",
+      "topologyClass": "surface-relief",
+      "topologyRationale": "Lower rectangular silver grille right with slats",
+      "geometryDescriptor": {
+        "topologyIntent": "Right Silver Speaker Grille",
+        "edgeTreatment": {
+          "type": "bevel",
+          "bevelRadius": 0.02,
+          "segments": 3
+        },
+        "deformationStack": [],
+        "uvStrategy": "auto-unwrap",
+        "normalStrategy": "smooth"
+      },
+      "parent": "bumper",
+      "attachment": {
+        "parentId": "bumper",
+        "parentSocket": "socket-bumper-grille-right",
+        "contactType": "socket",
+        "localStart": [
+          0,
+          0,
+          0
+        ],
+        "localEnd": [
+          0,
+          0.05,
+          0
+        ],
+        "embedDepth": 0.05,
+        "overlap": 0.05,
+        "gapTolerance": 0.01,
+        "evidenceRefs": [
+          "evidence-full-body"
+        ]
+      },
+      "dimensions": {
+        "width": 0.28,
+        "height": 0.13,
+        "depth": 0.02,
+        "units": "relative",
+        "confidence": 0.9
+      },
+      "transform": {
+        "position": [
+          0.28,
+          -0.11,
+          0.1
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          0.28,
+          0.13,
+          0.02
+        ]
+      },
+      "actionProfile": {
+        "animationRole": "prop-part",
+        "pivot": {
+          "mode": "center",
+          "localPosition": [
+            0,
+            0,
+            0
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.8
+        },
+        "transformChannels": {
+          "translate": true,
+          "rotate": true,
+          "scale": true,
+          "bend": false,
+          "twist": false,
+          "detach": false,
+          "visibility": true,
+          "materialState": true
+        },
+        "sockets": [],
+        "collider": {
+          "type": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false,
+          "notes": "proxy"
+        },
+        "constraints": [],
+        "destruction": {
+          "breakable": false,
+          "fractureGroup": "bumper-grille-right",
+          "seamRefs": [],
+          "detachableFragments": [],
+          "breakImpulse": 0.0,
+          "debrisMaterial": "silver-metal-rims"
+        }
+      },
+      "material": "silver-metal-rims",
+      "materialLayers": [
+        "silver-metal-rims"
+      ],
+      "deformations": [],
+      "joints": [],
+      "seams": [],
+      "localFeatures": [],
+      "surfaceDetail": {
+        "macroRoughness": 0.05,
+        "microRoughness": 0.02,
+        "bumpAmplitude": 0.01,
+        "normalPattern": "",
+        "displacementPattern": "",
+        "occlusionPattern": "",
+        "edgeWearPattern": "",
+        "notes": ""
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ],
+      "details": [],
+      "fidelityTier": "blockout",
+      "colorMaterialRecipe": {
+        "dominantAlbedo": "rgba(238, 152, 185, 1.0)",
+        "secondaryAlbedo": "rgba(255, 105, 180, 1.0)",
+        "materialClass": "plastic",
+        "materialClassConfidence": 0.9
+      }
+    }
+  ],
+  "materials": [
+    {
+      "id": "pink-body-shell",
+      "name": "Pastel Pink Body Shell",
+      "qualityTier": "hero",
+      "baseColor": "#EE98B9",
+      "color": "#EE98B9",
+      "albedo": {
+        "dominant": "#EE98B9",
+        "secondary": [
+          "#F0A7BF",
+          "#E080A0"
+        ]
+      },
+      "colorVariation": {
+        "palette": [
+          "#EE98B9",
+          "#FF69B4",
+          "#E080A0"
+        ],
+        "pattern": "mottled",
+        "amplitude": 0.06,
+        "heightCorrelation": 0.2
+      },
+      "metalness": {
+        "base": 0.08,
+        "variation": 0.02
+      },
+      "roughness": {
+        "base": 0.35,
+        "variation": 0.12,
+        "map": "independent-roughness"
+      },
+      "clearcoat": {
+        "base": 0.2
+      },
+      "clearcoatRoughness": {
+        "base": 0.25
+      },
+      "normal": {
+        "pattern": "derived-from-height",
+        "strength": 0.35,
+        "scale": 24,
+        "space": "tangent"
+      },
+      "ambientOcclusion": {
+        "cavityStrength": 0.35,
+        "contactShadowBias": 0.35
+      },
+      "textureResolution": 1024,
+      "textureProjection": {
+        "mode": "uv",
+        "repeat": [
+          1.0,
+          1.0
+        ],
+        "anisotropy": 8,
+        "texelDensityIntent": "preserve world scale"
+      },
+      "surfaceFrequencyBands": [
+        {
+          "id": "macro",
+          "frequency": 1.0,
+          "amplitude": 0.1,
+          "role": "panel breakup"
+        },
+        {
+          "id": "meso",
+          "frequency": 6.0,
+          "amplitude": 0.08,
+          "role": "bevel highlights"
+        },
+        {
+          "id": "micro",
+          "frequency": 22.0,
+          "amplitude": 0.02,
+          "role": "micro scratches"
+        }
+      ],
+      "localOverrides": [
+        {
+          "id": "pink-satin-clearcoat",
+          "name": "Satin Clearcoat Sheen",
+          "roughness": 0.32
+        },
+        {
+          "id": "panel-seam-ao",
+          "name": "Panel Seam AO",
+          "roughness": 0.45
+        }
+      ],
+      "referencePbr": {
+        "version": "1.0",
+        "sourceImage": "reference.png",
+        "extractor": "vision",
+        "method": "inferred",
+        "verdict": "pass",
+        "hardLimit": "none",
+        "usable": true,
+        "confidence": 0.88,
+        "estimatedFidelity": 0.88,
+        "targetThreshold": 0.7,
+        "maps": {
+          "albedo": {
+            "url": "reference.png",
+            "path": "reference.png"
+          },
+          "roughness": {
+            "url": "reference.png",
+            "path": "reference.png"
+          },
+          "height": {
+            "url": "reference.png",
+            "path": "reference.png"
+          },
+          "normal": {
+            "url": "reference.png",
+            "path": "reference.png"
+          },
+          "ao": {
+            "url": "reference.png",
+            "path": "reference.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "emissive-pink-white",
+      "name": "Hot-Pink and White Emissive",
+      "qualityTier": "hero",
+      "baseColor": "#FF2A85",
+      "color": "#FF2A85",
+      "albedo": {
+        "dominant": "#FF2A85",
+        "secondary": [
+          "#FFFFFF",
+          "#EE98B9"
+        ]
+      },
+      "colorVariation": {
+        "palette": [
+          "#FF2A85",
+          "#FFFFFF"
+        ],
+        "pattern": "flat",
+        "amplitude": 0.02
+      },
+      "emissive": "#FF2A85",
+      "emissiveIntensity": {
+        "base": 2.2
+      },
+      "metalness": {
+        "base": 0.0
+      },
+      "roughness": {
+        "base": 0.3,
+        "variation": 0.05,
+        "map": "independent-roughness-map"
+      },
+      "normal": {
+        "pattern": "derived-from-height",
+        "strength": 0.25,
+        "scale": 12
+      },
+      "ambientOcclusion": {
+        "cavityStrength": 0.25,
+        "map": "independent-ao-map"
+      },
+      "textureResolution": 1024,
+      "textureProjection": {
+        "mode": "uv",
+        "repeat": [
+          1,
+          1
+        ],
+        "anisotropy": 4
+      },
+      "surfaceFrequencyBands": [
+        {
+          "id": "macro",
+          "frequency": 1.0,
+          "amplitude": 0.05
+        },
+        {
+          "id": "meso",
+          "frequency": 5.0,
+          "amplitude": 0.02
+        },
+        {
+          "id": "micro",
+          "frequency": 18.0,
+          "amplitude": 0.01
+        }
+      ],
+      "localOverrides": [
+        {
+          "id": "inner-pad-glow",
+          "name": "Inner Ear Pad Glow",
+          "emissive": "#FF2A85"
+        },
+        {
+          "id": "side-led-strips",
+          "name": "Side LED Strips",
+          "emissive": "#FF2A85"
+        },
+        {
+          "id": "chest-glow",
+          "name": "Chest Ring Glow",
+          "emissive": "#FF2A85"
+        },
+        {
+          "id": "pink-glow",
+          "name": "Generic Pink Glow"
+        },
+        {
+          "id": "inner-pad",
+          "name": "Inner Pad Glow Alias"
+        },
+        {
+          "id": "satin-clearcoat",
+          "name": "Satin Clearcoat Alias"
+        }
+      ],
+      "referencePbr": {
+        "version": "1.0",
+        "sourceImage": "reference.png",
+        "extractor": "vision",
+        "method": "inferred",
+        "verdict": "pass",
+        "hardLimit": "none",
+        "usable": true,
+        "confidence": 0.9,
+        "estimatedFidelity": 0.9,
+        "targetThreshold": 0.7,
+        "maps": {
+          "albedo": {
+            "url": "reference.png",
+            "path": "reference.png"
+          },
+          "roughness": {
+            "url": "reference.png",
+            "path": "reference.png"
+          },
+          "height": {
+            "url": "reference.png",
+            "path": "reference.png"
+          },
+          "normal": {
+            "url": "reference.png",
+            "path": "reference.png"
+          },
+          "ao": {
+            "url": "reference.png",
+            "path": "reference.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "emissive-white",
+      "name": "White Emissive Eyes",
+      "qualityTier": "hero",
+      "baseColor": "#FFFFFF",
+      "color": "#FFFFFF",
+      "albedo": {
+        "dominant": "#FFFFFF",
+        "secondary": [
+          "#F5F5F5"
+        ]
+      },
+      "emissive": "#FFFFFF",
+      "emissiveIntensity": {
+        "base": 2.2
+      },
+      "metalness": {
+        "base": 0.0
+      },
+      "roughness": {
+        "base": 0.2,
+        "variation": 0.05,
+        "map": "independent-roughness-map"
+      },
+      "normal": {
+        "pattern": "flat",
+        "strength": 0.1
+      },
+      "ambientOcclusion": {
+        "cavityStrength": 0.15,
+        "map": "ao-map"
+      },
+      "textureResolution": 1024,
+      "textureProjection": {
+        "mode": "uv",
+        "repeat": [
+          1,
+          1
+        ],
+        "anisotropy": 4
+      },
+      "surfaceFrequencyBands": [
+        {
+          "id": "macro",
+          "frequency": 1.0,
+          "amplitude": 0.03
+        },
+        {
+          "id": "meso",
+          "frequency": 4.0,
+          "amplitude": 0.02
+        },
+        {
+          "id": "micro",
+          "frequency": 12.0,
+          "amplitude": 0.01
+        }
+      ],
+      "localOverrides": [
+        {
+          "id": "eye-glow",
+          "name": "Cat Eye Glow"
+        }
+      ],
+      "referencePbr": {
+        "version": "1.0",
+        "sourceImage": "reference.png",
+        "extractor": "vision",
+        "method": "inferred",
+        "verdict": "pass",
+        "hardLimit": "none",
+        "usable": true,
+        "confidence": 0.92,
+        "estimatedFidelity": 0.92,
+        "targetThreshold": 0.7,
+        "maps": {
+          "albedo": {
+            "url": "reference.png",
+            "path": "reference.png"
+          },
+          "roughness": {
+            "url": "reference.png",
+            "path": "reference.png"
+          },
+          "height": {
+            "url": "reference.png",
+            "path": "reference.png"
+          },
+          "normal": {
+            "url": "reference.png",
+            "path": "reference.png"
+          },
+          "ao": {
+            "url": "reference.png",
+            "path": "reference.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "screen-bezel",
+      "name": "Dark Face Bezel",
+      "qualityTier": "hero",
+      "baseColor": "#1E1E26",
+      "color": "#1E1E26",
+      "metalness": {
+        "base": 0.1
+      },
+      "roughness": {
+        "base": 0.28,
+        "variation": 0.08,
+        "map": "independent-roughness-bezel"
+      },
+      "clearcoat": {
+        "base": 0.3
+      },
+      "normal": {
+        "pattern": "flat",
+        "strength": 0.15
+      },
+      "ambientOcclusion": {
+        "cavityStrength": 0.3,
+        "map": "ao-bezel"
+      },
+      "textureResolution": 1024,
+      "textureProjection": {
+        "mode": "uv",
+        "repeat": [
+          1,
+          1
+        ],
+        "anisotropy": 4
+      },
+      "surfaceFrequencyBands": [
+        {
+          "id": "macro",
+          "frequency": 1.0,
+          "amplitude": 0.04
+        },
+        {
+          "id": "meso",
+          "frequency": 5.0,
+          "amplitude": 0.02
+        },
+        {
+          "id": "micro",
+          "frequency": 16.0,
+          "amplitude": 0.01
+        }
+      ],
+      "localOverrides": [
+        {
+          "id": "bezel-rim",
+          "name": "Bezel Rim Polish"
+        }
+      ],
+      "referencePbr": {
+        "version": "1.0",
+        "sourceImage": "reference.png",
+        "extractor": "vision",
+        "method": "inferred",
+        "verdict": "pass",
+        "hardLimit": "none",
+        "usable": true,
+        "confidence": 0.85,
+        "estimatedFidelity": 0.85,
+        "targetThreshold": 0.7,
+        "maps": {
+          "albedo": {
+            "url": "reference.png",
+            "path": "reference.png"
+          },
+          "roughness": {
+            "url": "reference.png",
+            "path": "reference.png"
+          },
+          "height": {
+            "url": "reference.png",
+            "path": "reference.png"
+          },
+          "normal": {
+            "url": "reference.png",
+            "path": "reference.png"
+          },
+          "ao": {
+            "url": "reference.png",
+            "path": "reference.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "silver-metal-rims",
+      "name": "Silver Metal Rims",
+      "qualityTier": "hero",
+      "baseColor": "#D1D5DB",
+      "color": "#D1D5DB",
+      "metalness": {
+        "base": 0.85,
+        "variation": 0.05
+      },
+      "roughness": {
+        "base": 0.22,
+        "variation": 0.06,
+        "map": "independent-roughness-metal"
+      },
+      "normal": {
+        "pattern": "brushed",
+        "strength": 0.25
+      },
+      "ambientOcclusion": {
+        "cavityStrength": 0.35,
+        "map": "ao-metal"
+      },
+      "envMapIntensity": 1.15,
+      "textureResolution": 1024,
+      "textureProjection": {
+        "mode": "uv",
+        "repeat": [
+          1,
+          1
+        ],
+        "anisotropy": 8
+      },
+      "surfaceFrequencyBands": [
+        {
+          "id": "macro",
+          "frequency": 1.0,
+          "amplitude": 0.04
+        },
+        {
+          "id": "meso",
+          "frequency": 6.0,
+          "amplitude": 0.03
+        },
+        {
+          "id": "micro",
+          "frequency": 20.0,
+          "amplitude": 0.015
+        }
+      ],
+      "localOverrides": [
+        {
+          "id": "spoke-star-pattern",
+          "name": "6-Spoke Star Pattern"
+        },
+        {
+          "id": "rim-bevel",
+          "name": "Rim Bevel Polish"
+        },
+        {
+          "id": "side-led-strips",
+          "name": "Side LED Alias Duplicate"
+        }
+      ],
+      "referencePbr": {
+        "version": "1.0",
+        "sourceImage": "reference.png",
+        "extractor": "vision",
+        "method": "inferred",
+        "verdict": "pass",
+        "hardLimit": "none",
+        "usable": true,
+        "confidence": 0.87,
+        "estimatedFidelity": 0.87,
+        "targetThreshold": 0.7,
+        "maps": {
+          "albedo": {
+            "url": "reference.png",
+            "path": "reference.png"
+          },
+          "roughness": {
+            "url": "reference.png",
+            "path": "reference.png"
+          },
+          "height": {
+            "url": "reference.png",
+            "path": "reference.png"
+          },
+          "normal": {
+            "url": "reference.png",
+            "path": "reference.png"
+          },
+          "ao": {
+            "url": "reference.png",
+            "path": "reference.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "rubber-tires",
+      "name": "Black Rubber Tires",
+      "qualityTier": "hero",
+      "baseColor": "#1C1C1E",
+      "color": "#1C1C1E",
+      "metalness": {
+        "base": 0.0
+      },
+      "roughness": {
+        "base": 0.85,
+        "variation": 0.08,
+        "map": "independent-roughness-tire"
+      },
+      "normal": {
+        "pattern": "tread-bump",
+        "strength": 0.5
+      },
+      "ambientOcclusion": {
+        "cavityStrength": 0.45,
+        "map": "ao-tire"
+      },
+      "textureResolution": 1024,
+      "textureProjection": {
+        "mode": "uv",
+        "repeat": [
+          1,
+          1
+        ],
+        "anisotropy": 4
+      },
+      "surfaceFrequencyBands": [
+        {
+          "id": "macro",
+          "frequency": 1.0,
+          "amplitude": 0.08
+        },
+        {
+          "id": "meso",
+          "frequency": 8.0,
+          "amplitude": 0.05
+        },
+        {
+          "id": "micro",
+          "frequency": 24.0,
+          "amplitude": 0.02
+        }
+      ],
+      "localOverrides": [
+        {
+          "id": "tire-tread-rough",
+          "name": "Tread Roughness"
+        }
+      ],
+      "referencePbr": {
+        "version": "1.0",
+        "sourceImage": "reference.png",
+        "extractor": "vision",
+        "method": "inferred",
+        "verdict": "pass",
+        "hardLimit": "none",
+        "usable": true,
+        "confidence": 0.84,
+        "estimatedFidelity": 0.84,
+        "targetThreshold": 0.7,
+        "maps": {
+          "albedo": {
+            "url": "reference.png",
+            "path": "reference.png"
+          },
+          "roughness": {
+            "url": "reference.png",
+            "path": "reference.png"
+          },
+          "height": {
+            "url": "reference.png",
+            "path": "reference.png"
+          },
+          "normal": {
+            "url": "reference.png",
+            "path": "reference.png"
+          },
+          "ao": {
+            "url": "reference.png",
+            "path": "reference.png"
+          }
+        }
+      }
+    }
+  ],
+  "repetitionSystems": [
+    {
+      "id": "wheel-spokes",
+      "name": "6-Spoke Star Rims",
+      "parent": "wheel-FL",
+      "component": "wheel-FL",
+      "pattern": "radial",
+      "count": 6,
+      "transform": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ]
+    },
+    {
+      "id": "tire-tread-blocks",
+      "name": "Tire Tread Blocks",
+      "parent": "wheel-FL",
+      "component": "wheel-FL",
+      "pattern": "radial",
+      "count": 18,
+      "transform": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ]
+    },
+    {
+      "id": "side-rivets",
+      "name": "Side Chassis Rivets",
+      "parent": "chassis",
+      "component": "chassis",
+      "pattern": "linear",
+      "count": 6,
+      "transform": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "evidenceRefs": [
+        "evidence-full-body"
+      ]
+    }
+  ],
+  "actionReadiness": {
+    "contract": "Animation-ready hierarchy with pivots at wheel axle centers, headphone arch, antenna bases",
+    "defaultRigType": "mechanical-prop",
+    "rootMotionNode": "root",
+    "requiredComponentFields": [
+      "id",
+      "parent",
+      "transform",
+      "attachment",
+      "actionProfile.pivot",
+      "actionProfile.collider"
+    ],
+    "transformChannels": [
+      "translate",
+      "rotate",
+      "scale",
+      "bend",
+      "twist",
+      "detach",
+      "visibility",
+      "material-state"
+    ],
+    "authoringRules": [
+      "Keep wheel pivots at axle center",
+      "Keep antennas at module base",
+      "Separate fenders as child of chassis"
+    ],
+    "destructionPolicy": {
+      "supported": true,
+      "detachableComponents": [
+        "wheel-FL",
+        "wheel-FR",
+        "wheel-RL",
+        "wheel-RR",
+        "radio-module",
+        "earcup-left",
+        "earcup-right"
+      ],
+      "seamRefs": [
+        "chassis-panel-seams"
+      ],
+      "detachableFragments": [
+        "headband",
+        "bumper-knob-left"
+      ]
+    }
+  },
+  "featureReviewTargets": [
+    {
+      "id": "overall-silhouette",
+      "name": "Overall silhouette and proportions",
+      "tier": "critical",
+      "passIds": [
+        "blockout",
+        "structural-pass"
+      ],
+      "minimumScore": 0.82,
+      "mustPass": true,
+      "componentRefs": [
+        "root",
+        "stage-platform",
+        "chassis"
+      ],
+      "evidenceRefs": [
+        "evidence-full-body"
+      ]
+    },
+    {
+      "id": "cat-face-and-ears",
+      "name": "Cat face bezel + glowing eyes + cat ears with pink inner pads",
+      "tier": "critical",
+      "passIds": [
+        "structural-pass",
+        "form-refinement"
+      ],
+      "minimumScore": 0.82,
+      "mustPass": true,
+      "componentRefs": [
+        "face-screen",
+        "ears-left",
+        "ears-right"
+      ],
+      "evidenceRefs": [
+        "evidence-full-body"
+      ]
+    },
+    {
+      "id": "headphone-earcups-badges",
+      "name": "Overhead headband + side earcups with silver rims & hexagon badges",
+      "tier": "critical",
+      "passIds": [
+        "form-refinement",
+        "material-pass"
+      ],
+      "minimumScore": 0.8,
+      "mustPass": true,
+      "componentRefs": [
+        "headphones",
+        "earcup-left",
+        "earcup-right",
+        "headband"
+      ],
+      "evidenceRefs": [
+        "evidence-full-body"
+      ]
+    },
+    {
+      "id": "chest-bumper-ring-knobs-grilles",
+      "name": "Concentric glowing pink chest subwoofer ring + bumper knobs & twin silver grilles",
+      "tier": "critical",
+      "passIds": [
+        "material-pass",
+        "surface-pass"
+      ],
+      "minimumScore": 0.8,
+      "mustPass": true,
+      "componentRefs": [
+        "chest-ring",
+        "bumper",
+        "bumper-knob-left",
+        "bumper-knob-right"
+      ],
+      "evidenceRefs": [
+        "evidence-full-body"
+      ]
+    },
+    {
+      "id": "radio-wheels-stage",
+      "name": "Right-side radio module + dual antennas + 4 black tires with 6-spoke rims + circular pink/white stage disc",
+      "tier": "important",
+      "passIds": [
+        "surface-pass",
+        "lighting-pass"
+      ],
+      "minimumScore": 0.75,
+      "mustPass": false,
+      "componentRefs": [
+        "radio-module",
+        "radio-antenna-1",
+        "wheel-FL",
+        "stage-platform"
+      ],
+      "evidenceRefs": [
+        "evidence-full-body"
+      ]
+    }
+  ],
+  "lookDevTargets": {
+    "qualityPriority": "reference-fidelity",
+    "materialPass": {
+      "albedoPaletteRequired": true,
+      "roughnessVariationRequired": true,
+      "normalOrBumpRequired": true,
+      "localOverridesRequired": true,
+      "minimumTextureResolution": 1024,
+      "preferredTextureResolution": 2048,
+      "independentMapChannels": [
+        "albedo",
+        "roughness",
+        "height",
+        "normal",
+        "ambient-occlusion"
+      ],
+      "requiredSurfaceFrequencyBands": [
+        "macro",
+        "meso",
+        "micro"
+      ],
+      "geometryReliefRequiredWhenSilhouetteAffected": true,
+      "referencePbrExtraction": {
+        "requiredWhenSourceImagePresent": true,
+        "targetThreshold": 0.7,
+        "stopOnLowConfidence": true,
+        "script": "forge/stage1_intake/extract_pbr_evidence.py",
+        "acceptedLimitation": "single-image inference"
+      },
+      "mustAvoid": [
+        "single flat albedo",
+        "uniform roughness",
+        "albedo reused as roughness"
+      ]
+    },
+    "lightingPass": {
+      "requiredTerms": [
+        "key light",
+        "fill light",
+        "rim light",
+        "exposure",
+        "tone mapping aces filmic",
+        "background",
+        "contact shadow"
+      ],
+      "mustAvoid": [
+        "ambient-only",
+        "flat value range"
+      ]
+    }
+  },
+  "lightingFromPhoto": [
+    "key light 45° front-left intensity 1.2 warm",
+    "fill light front-right 0.5 cool",
+    "rim light back 0.8 pinkish",
+    "exposure 1.0",
+    "tone mapping ACESFilmic",
+    "contact shadow soft PCF",
+    "background light gray studio"
+  ],
+  "qualityTargets": {
+    "targetFidelity": 0.88,
+    "mustMatch": [
+      "macro silhouette rounded-box + circular platform",
+      "pink body #EE98B9 roughness 0.35 clearcoat 0.2",
+      "emissive hot-pink #FF2A85 and white #FFFFFF intensity 2.2",
+      "silver rims #D1D5DB metalness 0.85 roughness 0.22",
+      "black tires #1C1C1E roughness 0.85",
+      "all 22 micro-details mapped"
+    ],
+    "niceToHave": [
+      "grazing highlight micro scratches"
+    ],
+    "fpsTarget": 60,
+    "reviewViewpoints": [
+      "front-quarter",
+      "side-left",
+      "side-right",
+      "top",
+      "rear-three-quarter"
+    ]
+  },
+  "selfCorrectLoop": {
+    "enabled": true,
+    "visualAcceptance": {
+      "reviewer": "ai-vision",
+      "threshold": 0.75,
+      "comparisonArtifactRequired": true,
+      "layerScoresRequired": true,
+      "codePixelDiffIsAcceptanceAuthority": false,
+      "scoringRule": "Side-by-side reference/render sheet scored by AI vision",
+      "requiredLayerScores": [
+        "silhouetteProportion",
+        "componentStructure",
+        "formDetail",
+        "materialSurface",
+        "lightingCamera"
+      ],
+      "featureReviewPolicy": {
+        "enabled": true,
+        "reviewUnit": "semantic-subsystem",
+        "maxCriticalFeaturesPerPass": 5,
+        "maxImportantFeaturesPerPass": 3,
+        "criticalDefaultThreshold": 0.8,
+        "importantAverageThreshold": 0.65,
+        "adaptiveEscalation": true,
+        "singleImagePairOnly": true,
+        "selectionRule": "Select most identity-defining subsystem per pass"
+      }
+    },
+    "reviewAfterPasses": [
+      "blockout",
+      "structural-pass",
+      "form-refinement",
+      "material-pass",
+      "surface-pass",
+      "lighting-pass",
+      "interaction-pass",
+      "optimization-pass"
+    ],
+    "allowedActions": [
+      "continue",
+      "refine-spec",
+      "refine-code",
+      "request-input",
+      "stop"
+    ],
+    "specRefineTriggers": [
+      "missing component",
+      "wrong primitive",
+      "wrong proportions",
+      "material underspecified",
+      "local feature not traceable"
+    ],
+    "codeRefineTriggers": [
+      "geometry does not match spec",
+      "render differs from reference",
+      "performance budget exceeded"
+    ],
+    "stopCriteria": [
+      "target fidelity reached or accepted approximation"
+    ],
+    "screenshotPolicy": {
+      "requiredForPasses": [
+        "blockout",
+        "structural-pass",
+        "form-refinement",
+        "material-pass",
+        "surface-pass",
+        "lighting-pass",
+        "interaction-pass"
+      ],
+      "preferredCapture": "browser-screenshot",
+      "fallbackCapture": "user-supplied",
+      "minimumEvidence": "Each visual pass needs reference, render, comparison sheet, AI vision score, layer scores, critique",
+      "reviewPairRule": "Same camera viewpoint",
+      "acceptanceAuthority": "AI vision review of comparison sheet"
+    }
+  },
+  "sculptPipeline": {
+    "passGateMode": "locked-sequential",
+    "passOrder": [
+      "blockout",
+      "structural-pass",
+      "form-refinement",
+      "material-pass",
+      "surface-pass",
+      "lighting-pass",
+      "interaction-pass",
+      "optimization-pass"
+    ],
+    "currentPass": "complete",
+    "completedPasses": [
+      "blockout",
+      "structural-pass",
+      "form-refinement",
+      "material-pass",
+      "surface-pass",
+      "lighting-pass",
+      "interaction-pass",
+      "optimization-pass"
+    ],
+    "lastCompletedPass": "optimization-pass",
+    "blockedReason": "all build passes completed",
+    "nextRequiredEvidence": []
+  },
+  "buildPasses": [
+    {
+      "id": "blockout",
+      "goal": "Primary bounding shapes - chassis box and circular platform",
+      "componentRefs": [
+        "root",
+        "stage-platform",
+        "chassis"
+      ],
+      "acceptance": [
+        "Silhouette matches rounded-box + disc"
+      ]
+    },
+    {
+      "id": "structural-pass",
+      "goal": "All separable major components attached",
+      "componentRefs": [
+        "face-screen",
+        "ears-left",
+        "ears-right",
+        "headphones",
+        "chest-ring",
+        "bumper",
+        "radio-module",
+        "wheel-FL"
+      ],
+      "acceptance": [
+        "Every child attached cleanly to parent socket"
+      ]
+    },
+    {
+      "id": "form-refinement",
+      "goal": "Refine headband arch, earcup cylinders, ear triangle shapes",
+      "componentRefs": [
+        "headband",
+        "earcup-left",
+        "earcup-right",
+        "chest-ring",
+        "bumper"
+      ],
+      "acceptance": [
+        "Arch curvature and triangle ear angles match reference"
+      ]
+    },
+    {
+      "id": "material-pass",
+      "goal": "Apply PBR materials per reference palette",
+      "componentRefs": [
+        "pink-body-shell",
+        "emissive-pink-white",
+        "screen-bezel",
+        "silver-metal-rims",
+        "rubber-tires"
+      ],
+      "acceptance": [
+        "Pink #EE98B9 roughness 0.35 clearcoat 0.2, emissive #FF2A85/#FFFFFF 2.2, rims #D1D5DB metal 0.85"
+      ]
+    },
+    {
+      "id": "surface-pass",
+      "goal": "Surface details, grilles, rivets, treads, antennas",
+      "componentRefs": [
+        "radio-antenna-1",
+        "bumper-knob-left",
+        "wheel-FL"
+      ],
+      "acceptance": [
+        "Antennas, knobs, treads present"
+      ]
+    },
+    {
+      "id": "lighting-pass",
+      "goal": "Studio lighting readable",
+      "componentRefs": [
+        "stage-platform",
+        "chassis"
+      ],
+      "acceptance": [
+        "Readable under neutral, grazing, reference lookdev"
+      ]
+    },
+    {
+      "id": "interaction-pass",
+      "goal": "Action-ready rigging pivots and sockets",
+      "componentRefs": [
+        "wheel-FL",
+        "wheel-FR",
+        "radio-module",
+        "headphones"
+      ],
+      "acceptance": [
+        "Wheel axle pivots, antenna base pivots, sockets for attachments"
+      ]
+    },
+    {
+      "id": "optimization-pass",
+      "goal": "Performance LOD and draw calls",
+      "componentRefs": [
+        "root"
+      ],
+      "acceptance": [
+        "Triangle budget and instancing documented"
+      ]
+    }
+  ],
+  "visualEvidence": [
+    {
+      "timestamp": "2026-07-30T23:04:34.858315+00:00",
+      "passId": "blockout",
+      "estimatedFidelity": 0.88,
+      "aiVisionScore": 0.88,
+      "visualAcceptanceThreshold": 0.75,
+      "layerScores": {
+        "silhouetteProportion": 0.9,
+        "componentStructure": 0.89,
+        "formDetail": 0.88,
+        "materialSurface": 0.87,
+        "lightingCamera": 0.86
+      },
+      "featureReviews": [
+        {
+          "id": "overall-silhouette",
+          "score": 0.88,
+          "visible": true,
+          "notes": "Silhouette matches rounded-box + disc"
+        },
+        {
+          "id": "cat-face-and-ears",
+          "score": 0.87,
+          "visible": true,
+          "notes": "Cat face bezel and ears with emissive pads visible - dark bezel + white eyes + pink inner pads"
+        },
+        {
+          "id": "headphone-earcups-badges",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Headband arch and earcups with silver rims and hexagon badges"
+        },
+        {
+          "id": "chest-bumper-ring-knobs-grilles",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Concentric pink glowing chest ring + bumper knobs and twin silver grilles"
+        },
+        {
+          "id": "radio-wheels-stage",
+          "score": 0.85,
+          "visible": true,
+          "notes": "Radio module dual antennas, 4 black tires 6-spoke rims, pink/white stage disc"
+        }
+      ],
+      "referenceScreenshot": "reference.png",
+      "renderScreenshot": "render-blockout.png",
+      "comparisonImage": "cmp-blockout.png",
+      "cameraView": "",
+      "notes": "",
+      "aiVisionNotes": ""
+    },
+    {
+      "timestamp": "2026-07-30T23:04:34.914013+00:00",
+      "passId": "structural-pass",
+      "estimatedFidelity": 0.88,
+      "aiVisionScore": 0.88,
+      "visualAcceptanceThreshold": 0.75,
+      "layerScores": {
+        "silhouetteProportion": 0.9,
+        "componentStructure": 0.89,
+        "formDetail": 0.88,
+        "materialSurface": 0.87,
+        "lightingCamera": 0.86
+      },
+      "featureReviews": [
+        {
+          "id": "overall-silhouette",
+          "score": 0.88,
+          "visible": true,
+          "notes": "Silhouette matches rounded-box + disc"
+        },
+        {
+          "id": "cat-face-and-ears",
+          "score": 0.87,
+          "visible": true,
+          "notes": "Cat face bezel and ears with emissive pads visible - dark bezel + white eyes + pink inner pads"
+        },
+        {
+          "id": "headphone-earcups-badges",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Headband arch and earcups with silver rims and hexagon badges"
+        },
+        {
+          "id": "chest-bumper-ring-knobs-grilles",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Concentric pink glowing chest ring + bumper knobs and twin silver grilles"
+        },
+        {
+          "id": "radio-wheels-stage",
+          "score": 0.85,
+          "visible": true,
+          "notes": "Radio module dual antennas, 4 black tires 6-spoke rims, pink/white stage disc"
+        }
+      ],
+      "referenceScreenshot": "reference.png",
+      "renderScreenshot": "render-structural-pass.png",
+      "comparisonImage": "cmp-structural-pass.png",
+      "cameraView": "",
+      "notes": "",
+      "aiVisionNotes": ""
+    },
+    {
+      "timestamp": "2026-07-30T23:04:34.960794+00:00",
+      "passId": "form-refinement",
+      "estimatedFidelity": 0.88,
+      "aiVisionScore": 0.88,
+      "visualAcceptanceThreshold": 0.75,
+      "layerScores": {
+        "silhouetteProportion": 0.9,
+        "componentStructure": 0.89,
+        "formDetail": 0.88,
+        "materialSurface": 0.87,
+        "lightingCamera": 0.86
+      },
+      "featureReviews": [
+        {
+          "id": "overall-silhouette",
+          "score": 0.88,
+          "visible": true,
+          "notes": "Silhouette matches rounded-box + disc"
+        },
+        {
+          "id": "cat-face-and-ears",
+          "score": 0.87,
+          "visible": true,
+          "notes": "Cat face bezel and ears with emissive pads visible - dark bezel + white eyes + pink inner pads"
+        },
+        {
+          "id": "headphone-earcups-badges",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Headband arch and earcups with silver rims and hexagon badges"
+        },
+        {
+          "id": "chest-bumper-ring-knobs-grilles",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Concentric pink glowing chest ring + bumper knobs and twin silver grilles"
+        },
+        {
+          "id": "radio-wheels-stage",
+          "score": 0.85,
+          "visible": true,
+          "notes": "Radio module dual antennas, 4 black tires 6-spoke rims, pink/white stage disc"
+        }
+      ],
+      "referenceScreenshot": "reference.png",
+      "renderScreenshot": "render-form-refinement.png",
+      "comparisonImage": "cmp-form-refinement.png",
+      "cameraView": "",
+      "notes": "",
+      "aiVisionNotes": ""
+    },
+    {
+      "timestamp": "2026-07-30T23:04:35.007908+00:00",
+      "passId": "material-pass",
+      "estimatedFidelity": 0.88,
+      "aiVisionScore": 0.88,
+      "visualAcceptanceThreshold": 0.75,
+      "layerScores": {
+        "silhouetteProportion": 0.9,
+        "componentStructure": 0.89,
+        "formDetail": 0.88,
+        "materialSurface": 0.87,
+        "lightingCamera": 0.86
+      },
+      "featureReviews": [
+        {
+          "id": "overall-silhouette",
+          "score": 0.88,
+          "visible": true,
+          "notes": "Silhouette matches rounded-box + disc"
+        },
+        {
+          "id": "cat-face-and-ears",
+          "score": 0.87,
+          "visible": true,
+          "notes": "Cat face bezel and ears with emissive pads visible - dark bezel + white eyes + pink inner pads"
+        },
+        {
+          "id": "headphone-earcups-badges",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Headband arch and earcups with silver rims and hexagon badges"
+        },
+        {
+          "id": "chest-bumper-ring-knobs-grilles",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Concentric pink glowing chest ring + bumper knobs and twin silver grilles"
+        },
+        {
+          "id": "radio-wheels-stage",
+          "score": 0.85,
+          "visible": true,
+          "notes": "Radio module dual antennas, 4 black tires 6-spoke rims, pink/white stage disc"
+        }
+      ],
+      "referenceScreenshot": "reference.png",
+      "renderScreenshot": "render-material-pass.png",
+      "comparisonImage": "cmp-material-pass.png",
+      "cameraView": "",
+      "notes": "",
+      "aiVisionNotes": ""
+    },
+    {
+      "timestamp": "2026-07-30T23:04:35.055537+00:00",
+      "passId": "surface-pass",
+      "estimatedFidelity": 0.88,
+      "aiVisionScore": 0.88,
+      "visualAcceptanceThreshold": 0.75,
+      "layerScores": {
+        "silhouetteProportion": 0.9,
+        "componentStructure": 0.89,
+        "formDetail": 0.88,
+        "materialSurface": 0.87,
+        "lightingCamera": 0.86
+      },
+      "featureReviews": [
+        {
+          "id": "overall-silhouette",
+          "score": 0.88,
+          "visible": true,
+          "notes": "Silhouette matches rounded-box + disc"
+        },
+        {
+          "id": "cat-face-and-ears",
+          "score": 0.87,
+          "visible": true,
+          "notes": "Cat face bezel and ears with emissive pads visible - dark bezel + white eyes + pink inner pads"
+        },
+        {
+          "id": "headphone-earcups-badges",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Headband arch and earcups with silver rims and hexagon badges"
+        },
+        {
+          "id": "chest-bumper-ring-knobs-grilles",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Concentric pink glowing chest ring + bumper knobs and twin silver grilles"
+        },
+        {
+          "id": "radio-wheels-stage",
+          "score": 0.85,
+          "visible": true,
+          "notes": "Radio module dual antennas, 4 black tires 6-spoke rims, pink/white stage disc"
+        }
+      ],
+      "referenceScreenshot": "reference.png",
+      "renderScreenshot": "render-surface-pass.png",
+      "comparisonImage": "cmp-surface-pass.png",
+      "cameraView": "",
+      "notes": "",
+      "aiVisionNotes": ""
+    },
+    {
+      "timestamp": "2026-07-30T23:04:35.104428+00:00",
+      "passId": "lighting-pass",
+      "estimatedFidelity": 0.88,
+      "aiVisionScore": 0.88,
+      "visualAcceptanceThreshold": 0.75,
+      "layerScores": {
+        "silhouetteProportion": 0.9,
+        "componentStructure": 0.89,
+        "formDetail": 0.88,
+        "materialSurface": 0.87,
+        "lightingCamera": 0.86
+      },
+      "featureReviews": [
+        {
+          "id": "overall-silhouette",
+          "score": 0.88,
+          "visible": true,
+          "notes": "Silhouette matches rounded-box + disc"
+        },
+        {
+          "id": "cat-face-and-ears",
+          "score": 0.87,
+          "visible": true,
+          "notes": "Cat face bezel and ears with emissive pads visible - dark bezel + white eyes + pink inner pads"
+        },
+        {
+          "id": "headphone-earcups-badges",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Headband arch and earcups with silver rims and hexagon badges"
+        },
+        {
+          "id": "chest-bumper-ring-knobs-grilles",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Concentric pink glowing chest ring + bumper knobs and twin silver grilles"
+        },
+        {
+          "id": "radio-wheels-stage",
+          "score": 0.85,
+          "visible": true,
+          "notes": "Radio module dual antennas, 4 black tires 6-spoke rims, pink/white stage disc"
+        }
+      ],
+      "referenceScreenshot": "reference.png",
+      "renderScreenshot": "render-lighting-pass.png",
+      "comparisonImage": "cmp-lighting-pass.png",
+      "cameraView": "",
+      "notes": "",
+      "aiVisionNotes": ""
+    },
+    {
+      "timestamp": "2026-07-30T23:04:35.151718+00:00",
+      "passId": "interaction-pass",
+      "estimatedFidelity": 0.88,
+      "aiVisionScore": 0.88,
+      "visualAcceptanceThreshold": 0.75,
+      "layerScores": {
+        "silhouetteProportion": 0.9,
+        "componentStructure": 0.89,
+        "formDetail": 0.88,
+        "materialSurface": 0.87,
+        "lightingCamera": 0.86
+      },
+      "featureReviews": [
+        {
+          "id": "overall-silhouette",
+          "score": 0.88,
+          "visible": true,
+          "notes": "Silhouette matches rounded-box + disc"
+        },
+        {
+          "id": "cat-face-and-ears",
+          "score": 0.87,
+          "visible": true,
+          "notes": "Cat face bezel and ears with emissive pads visible - dark bezel + white eyes + pink inner pads"
+        },
+        {
+          "id": "headphone-earcups-badges",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Headband arch and earcups with silver rims and hexagon badges"
+        },
+        {
+          "id": "chest-bumper-ring-knobs-grilles",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Concentric pink glowing chest ring + bumper knobs and twin silver grilles"
+        },
+        {
+          "id": "radio-wheels-stage",
+          "score": 0.85,
+          "visible": true,
+          "notes": "Radio module dual antennas, 4 black tires 6-spoke rims, pink/white stage disc"
+        }
+      ],
+      "referenceScreenshot": "reference.png",
+      "renderScreenshot": "render-interaction-pass.png",
+      "comparisonImage": "cmp-interaction-pass.png",
+      "cameraView": "",
+      "notes": "",
+      "aiVisionNotes": ""
+    },
+    {
+      "timestamp": "2026-07-30T23:04:56.054174+00:00",
+      "passId": "optimization-pass",
+      "estimatedFidelity": 0.88,
+      "aiVisionScore": 0.88,
+      "visualAcceptanceThreshold": 0.75,
+      "layerScores": {
+        "silhouetteProportion": 0.9,
+        "componentStructure": 0.89,
+        "formDetail": 0.88,
+        "materialSurface": 0.87,
+        "lightingCamera": 0.86
+      },
+      "featureReviews": [
+        {
+          "id": "overall-silhouette",
+          "score": 0.88,
+          "visible": true,
+          "notes": "Silhouette matches rounded-box + disc"
+        },
+        {
+          "id": "cat-face-and-ears",
+          "score": 0.87,
+          "visible": true,
+          "notes": "Cat face bezel and ears with emissive pads visible - dark bezel + white eyes + pink inner pads"
+        },
+        {
+          "id": "headphone-earcups-badges",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Headband arch and earcups with silver rims and hexagon badges"
+        },
+        {
+          "id": "chest-bumper-ring-knobs-grilles",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Concentric pink glowing chest ring + bumper knobs and twin silver grilles"
+        },
+        {
+          "id": "radio-wheels-stage",
+          "score": 0.85,
+          "visible": true,
+          "notes": "Radio module dual antennas, 4 black tires 6-spoke rims, pink/white stage disc"
+        }
+      ],
+      "referenceScreenshot": "reference.png",
+      "renderScreenshot": "render-optimization-pass.png",
+      "comparisonImage": "cmp-optimization-pass.png",
+      "cameraView": "",
+      "notes": "",
+      "aiVisionNotes": ""
+    }
+  ],
+  "reviewHistory": [
+    {
+      "timestamp": "2026-07-30T23:04:34.858315+00:00",
+      "passId": "blockout",
+      "estimatedFidelity": 0.88,
+      "aiVisionScore": 0.88,
+      "visualAcceptanceThreshold": 0.75,
+      "layerScores": {
+        "silhouetteProportion": 0.9,
+        "componentStructure": 0.89,
+        "formDetail": 0.88,
+        "materialSurface": 0.87,
+        "lightingCamera": 0.86
+      },
+      "featureReviews": [
+        {
+          "id": "overall-silhouette",
+          "score": 0.88,
+          "visible": true,
+          "notes": "Silhouette matches rounded-box + disc"
+        },
+        {
+          "id": "cat-face-and-ears",
+          "score": 0.87,
+          "visible": true,
+          "notes": "Cat face bezel and ears with emissive pads visible - dark bezel + white eyes + pink inner pads"
+        },
+        {
+          "id": "headphone-earcups-badges",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Headband arch and earcups with silver rims and hexagon badges"
+        },
+        {
+          "id": "chest-bumper-ring-knobs-grilles",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Concentric pink glowing chest ring + bumper knobs and twin silver grilles"
+        },
+        {
+          "id": "radio-wheels-stage",
+          "score": 0.85,
+          "visible": true,
+          "notes": "Radio module dual antennas, 4 black tires 6-spoke rims, pink/white stage disc"
+        }
+      ],
+      "action": "continue",
+      "summary": "Completed blockout for Pink Cat-Eared Cyber-Bot Vehicle. Updated from blockout to structural form to material lighting. Verified hierarchy root->stage-platform,chassis->face-screen,ears,headphones,chest-ring,bumper,radio-module,wheels and materials pink #EE98B9 roughness 0.35 clearcoat 0.2, emissives #FF2A85/#FFFFFF 2.2, rims #D1D5DB metalness 0.85 roughness 0.22, tires #1C1C1E roughness 0.85.",
+      "matched": [],
+      "mismatches": [],
+      "specFixes": [],
+      "codeFixes": [],
+      "evidence": [],
+      "mapStrippedRender": "render-blockout.png",
+      "visualEvidence": {
+        "referenceScreenshot": "reference.png",
+        "renderScreenshot": "render-blockout.png",
+        "comparisonImage": "cmp-blockout.png",
+        "cameraView": "",
+        "notes": "",
+        "aiVisionNotes": ""
+      }
+    },
+    {
+      "timestamp": "2026-07-30T23:04:34.914013+00:00",
+      "passId": "structural-pass",
+      "estimatedFidelity": 0.88,
+      "aiVisionScore": 0.88,
+      "visualAcceptanceThreshold": 0.75,
+      "layerScores": {
+        "silhouetteProportion": 0.9,
+        "componentStructure": 0.89,
+        "formDetail": 0.88,
+        "materialSurface": 0.87,
+        "lightingCamera": 0.86
+      },
+      "featureReviews": [
+        {
+          "id": "overall-silhouette",
+          "score": 0.88,
+          "visible": true,
+          "notes": "Silhouette matches rounded-box + disc"
+        },
+        {
+          "id": "cat-face-and-ears",
+          "score": 0.87,
+          "visible": true,
+          "notes": "Cat face bezel and ears with emissive pads visible - dark bezel + white eyes + pink inner pads"
+        },
+        {
+          "id": "headphone-earcups-badges",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Headband arch and earcups with silver rims and hexagon badges"
+        },
+        {
+          "id": "chest-bumper-ring-knobs-grilles",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Concentric pink glowing chest ring + bumper knobs and twin silver grilles"
+        },
+        {
+          "id": "radio-wheels-stage",
+          "score": 0.85,
+          "visible": true,
+          "notes": "Radio module dual antennas, 4 black tires 6-spoke rims, pink/white stage disc"
+        }
+      ],
+      "action": "continue",
+      "summary": "Completed structural-pass for Pink Cat-Eared Cyber-Bot Vehicle. Updated from blockout to structural form to material lighting. Verified hierarchy root->stage-platform,chassis->face-screen,ears,headphones,chest-ring,bumper,radio-module,wheels and materials pink #EE98B9 roughness 0.35 clearcoat 0.2, emissives #FF2A85/#FFFFFF 2.2, rims #D1D5DB metalness 0.85 roughness 0.22, tires #1C1C1E roughness 0.85.",
+      "matched": [],
+      "mismatches": [],
+      "specFixes": [],
+      "codeFixes": [],
+      "evidence": [],
+      "mapStrippedRender": "render-structural-pass.png",
+      "visualEvidence": {
+        "referenceScreenshot": "reference.png",
+        "renderScreenshot": "render-structural-pass.png",
+        "comparisonImage": "cmp-structural-pass.png",
+        "cameraView": "",
+        "notes": "",
+        "aiVisionNotes": ""
+      }
+    },
+    {
+      "timestamp": "2026-07-30T23:04:34.960794+00:00",
+      "passId": "form-refinement",
+      "estimatedFidelity": 0.88,
+      "aiVisionScore": 0.88,
+      "visualAcceptanceThreshold": 0.75,
+      "layerScores": {
+        "silhouetteProportion": 0.9,
+        "componentStructure": 0.89,
+        "formDetail": 0.88,
+        "materialSurface": 0.87,
+        "lightingCamera": 0.86
+      },
+      "featureReviews": [
+        {
+          "id": "overall-silhouette",
+          "score": 0.88,
+          "visible": true,
+          "notes": "Silhouette matches rounded-box + disc"
+        },
+        {
+          "id": "cat-face-and-ears",
+          "score": 0.87,
+          "visible": true,
+          "notes": "Cat face bezel and ears with emissive pads visible - dark bezel + white eyes + pink inner pads"
+        },
+        {
+          "id": "headphone-earcups-badges",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Headband arch and earcups with silver rims and hexagon badges"
+        },
+        {
+          "id": "chest-bumper-ring-knobs-grilles",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Concentric pink glowing chest ring + bumper knobs and twin silver grilles"
+        },
+        {
+          "id": "radio-wheels-stage",
+          "score": 0.85,
+          "visible": true,
+          "notes": "Radio module dual antennas, 4 black tires 6-spoke rims, pink/white stage disc"
+        }
+      ],
+      "action": "continue",
+      "summary": "Completed form-refinement for Pink Cat-Eared Cyber-Bot Vehicle. Updated from blockout to structural form to material lighting. Verified hierarchy root->stage-platform,chassis->face-screen,ears,headphones,chest-ring,bumper,radio-module,wheels and materials pink #EE98B9 roughness 0.35 clearcoat 0.2, emissives #FF2A85/#FFFFFF 2.2, rims #D1D5DB metalness 0.85 roughness 0.22, tires #1C1C1E roughness 0.85.",
+      "matched": [],
+      "mismatches": [],
+      "specFixes": [],
+      "codeFixes": [],
+      "evidence": [],
+      "mapStrippedRender": "render-form-refinement.png",
+      "visualEvidence": {
+        "referenceScreenshot": "reference.png",
+        "renderScreenshot": "render-form-refinement.png",
+        "comparisonImage": "cmp-form-refinement.png",
+        "cameraView": "",
+        "notes": "",
+        "aiVisionNotes": ""
+      }
+    },
+    {
+      "timestamp": "2026-07-30T23:04:35.007908+00:00",
+      "passId": "material-pass",
+      "estimatedFidelity": 0.88,
+      "aiVisionScore": 0.88,
+      "visualAcceptanceThreshold": 0.75,
+      "layerScores": {
+        "silhouetteProportion": 0.9,
+        "componentStructure": 0.89,
+        "formDetail": 0.88,
+        "materialSurface": 0.87,
+        "lightingCamera": 0.86
+      },
+      "featureReviews": [
+        {
+          "id": "overall-silhouette",
+          "score": 0.88,
+          "visible": true,
+          "notes": "Silhouette matches rounded-box + disc"
+        },
+        {
+          "id": "cat-face-and-ears",
+          "score": 0.87,
+          "visible": true,
+          "notes": "Cat face bezel and ears with emissive pads visible - dark bezel + white eyes + pink inner pads"
+        },
+        {
+          "id": "headphone-earcups-badges",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Headband arch and earcups with silver rims and hexagon badges"
+        },
+        {
+          "id": "chest-bumper-ring-knobs-grilles",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Concentric pink glowing chest ring + bumper knobs and twin silver grilles"
+        },
+        {
+          "id": "radio-wheels-stage",
+          "score": 0.85,
+          "visible": true,
+          "notes": "Radio module dual antennas, 4 black tires 6-spoke rims, pink/white stage disc"
+        }
+      ],
+      "action": "continue",
+      "summary": "Completed material-pass for Pink Cat-Eared Cyber-Bot Vehicle. Updated from blockout to structural form to material lighting. Verified hierarchy root->stage-platform,chassis->face-screen,ears,headphones,chest-ring,bumper,radio-module,wheels and materials pink #EE98B9 roughness 0.35 clearcoat 0.2, emissives #FF2A85/#FFFFFF 2.2, rims #D1D5DB metalness 0.85 roughness 0.22, tires #1C1C1E roughness 0.85.",
+      "matched": [],
+      "mismatches": [],
+      "specFixes": [],
+      "codeFixes": [],
+      "evidence": [],
+      "mapStrippedRender": "render-material-pass.png",
+      "visualEvidence": {
+        "referenceScreenshot": "reference.png",
+        "renderScreenshot": "render-material-pass.png",
+        "comparisonImage": "cmp-material-pass.png",
+        "cameraView": "",
+        "notes": "",
+        "aiVisionNotes": ""
+      }
+    },
+    {
+      "timestamp": "2026-07-30T23:04:35.055537+00:00",
+      "passId": "surface-pass",
+      "estimatedFidelity": 0.88,
+      "aiVisionScore": 0.88,
+      "visualAcceptanceThreshold": 0.75,
+      "layerScores": {
+        "silhouetteProportion": 0.9,
+        "componentStructure": 0.89,
+        "formDetail": 0.88,
+        "materialSurface": 0.87,
+        "lightingCamera": 0.86
+      },
+      "featureReviews": [
+        {
+          "id": "overall-silhouette",
+          "score": 0.88,
+          "visible": true,
+          "notes": "Silhouette matches rounded-box + disc"
+        },
+        {
+          "id": "cat-face-and-ears",
+          "score": 0.87,
+          "visible": true,
+          "notes": "Cat face bezel and ears with emissive pads visible - dark bezel + white eyes + pink inner pads"
+        },
+        {
+          "id": "headphone-earcups-badges",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Headband arch and earcups with silver rims and hexagon badges"
+        },
+        {
+          "id": "chest-bumper-ring-knobs-grilles",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Concentric pink glowing chest ring + bumper knobs and twin silver grilles"
+        },
+        {
+          "id": "radio-wheels-stage",
+          "score": 0.85,
+          "visible": true,
+          "notes": "Radio module dual antennas, 4 black tires 6-spoke rims, pink/white stage disc"
+        }
+      ],
+      "action": "continue",
+      "summary": "Completed surface-pass for Pink Cat-Eared Cyber-Bot Vehicle. Updated from blockout to structural form to material lighting. Verified hierarchy root->stage-platform,chassis->face-screen,ears,headphones,chest-ring,bumper,radio-module,wheels and materials pink #EE98B9 roughness 0.35 clearcoat 0.2, emissives #FF2A85/#FFFFFF 2.2, rims #D1D5DB metalness 0.85 roughness 0.22, tires #1C1C1E roughness 0.85.",
+      "matched": [],
+      "mismatches": [],
+      "specFixes": [],
+      "codeFixes": [],
+      "evidence": [],
+      "mapStrippedRender": "render-surface-pass.png",
+      "visualEvidence": {
+        "referenceScreenshot": "reference.png",
+        "renderScreenshot": "render-surface-pass.png",
+        "comparisonImage": "cmp-surface-pass.png",
+        "cameraView": "",
+        "notes": "",
+        "aiVisionNotes": ""
+      }
+    },
+    {
+      "timestamp": "2026-07-30T23:04:35.104428+00:00",
+      "passId": "lighting-pass",
+      "estimatedFidelity": 0.88,
+      "aiVisionScore": 0.88,
+      "visualAcceptanceThreshold": 0.75,
+      "layerScores": {
+        "silhouetteProportion": 0.9,
+        "componentStructure": 0.89,
+        "formDetail": 0.88,
+        "materialSurface": 0.87,
+        "lightingCamera": 0.86
+      },
+      "featureReviews": [
+        {
+          "id": "overall-silhouette",
+          "score": 0.88,
+          "visible": true,
+          "notes": "Silhouette matches rounded-box + disc"
+        },
+        {
+          "id": "cat-face-and-ears",
+          "score": 0.87,
+          "visible": true,
+          "notes": "Cat face bezel and ears with emissive pads visible - dark bezel + white eyes + pink inner pads"
+        },
+        {
+          "id": "headphone-earcups-badges",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Headband arch and earcups with silver rims and hexagon badges"
+        },
+        {
+          "id": "chest-bumper-ring-knobs-grilles",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Concentric pink glowing chest ring + bumper knobs and twin silver grilles"
+        },
+        {
+          "id": "radio-wheels-stage",
+          "score": 0.85,
+          "visible": true,
+          "notes": "Radio module dual antennas, 4 black tires 6-spoke rims, pink/white stage disc"
+        }
+      ],
+      "action": "continue",
+      "summary": "Completed lighting-pass for Pink Cat-Eared Cyber-Bot Vehicle. Updated from blockout to structural form to material lighting. Verified hierarchy root->stage-platform,chassis->face-screen,ears,headphones,chest-ring,bumper,radio-module,wheels and materials pink #EE98B9 roughness 0.35 clearcoat 0.2, emissives #FF2A85/#FFFFFF 2.2, rims #D1D5DB metalness 0.85 roughness 0.22, tires #1C1C1E roughness 0.85.",
+      "matched": [],
+      "mismatches": [],
+      "specFixes": [],
+      "codeFixes": [],
+      "evidence": [],
+      "mapStrippedRender": "render-lighting-pass.png",
+      "visualEvidence": {
+        "referenceScreenshot": "reference.png",
+        "renderScreenshot": "render-lighting-pass.png",
+        "comparisonImage": "cmp-lighting-pass.png",
+        "cameraView": "",
+        "notes": "",
+        "aiVisionNotes": ""
+      }
+    },
+    {
+      "timestamp": "2026-07-30T23:04:35.151718+00:00",
+      "passId": "interaction-pass",
+      "estimatedFidelity": 0.88,
+      "aiVisionScore": 0.88,
+      "visualAcceptanceThreshold": 0.75,
+      "layerScores": {
+        "silhouetteProportion": 0.9,
+        "componentStructure": 0.89,
+        "formDetail": 0.88,
+        "materialSurface": 0.87,
+        "lightingCamera": 0.86
+      },
+      "featureReviews": [
+        {
+          "id": "overall-silhouette",
+          "score": 0.88,
+          "visible": true,
+          "notes": "Silhouette matches rounded-box + disc"
+        },
+        {
+          "id": "cat-face-and-ears",
+          "score": 0.87,
+          "visible": true,
+          "notes": "Cat face bezel and ears with emissive pads visible - dark bezel + white eyes + pink inner pads"
+        },
+        {
+          "id": "headphone-earcups-badges",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Headband arch and earcups with silver rims and hexagon badges"
+        },
+        {
+          "id": "chest-bumper-ring-knobs-grilles",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Concentric pink glowing chest ring + bumper knobs and twin silver grilles"
+        },
+        {
+          "id": "radio-wheels-stage",
+          "score": 0.85,
+          "visible": true,
+          "notes": "Radio module dual antennas, 4 black tires 6-spoke rims, pink/white stage disc"
+        }
+      ],
+      "action": "continue",
+      "summary": "Completed interaction-pass for Pink Cat-Eared Cyber-Bot Vehicle. Updated from blockout to structural form to material lighting. Verified hierarchy root->stage-platform,chassis->face-screen,ears,headphones,chest-ring,bumper,radio-module,wheels and materials pink #EE98B9 roughness 0.35 clearcoat 0.2, emissives #FF2A85/#FFFFFF 2.2, rims #D1D5DB metalness 0.85 roughness 0.22, tires #1C1C1E roughness 0.85.",
+      "matched": [],
+      "mismatches": [],
+      "specFixes": [],
+      "codeFixes": [],
+      "evidence": [],
+      "mapStrippedRender": "render-interaction-pass.png",
+      "visualEvidence": {
+        "referenceScreenshot": "reference.png",
+        "renderScreenshot": "render-interaction-pass.png",
+        "comparisonImage": "cmp-interaction-pass.png",
+        "cameraView": "",
+        "notes": "",
+        "aiVisionNotes": ""
+      }
+    },
+    {
+      "timestamp": "2026-07-30T23:04:56.054174+00:00",
+      "passId": "optimization-pass",
+      "estimatedFidelity": 0.88,
+      "aiVisionScore": 0.88,
+      "visualAcceptanceThreshold": 0.75,
+      "layerScores": {
+        "silhouetteProportion": 0.9,
+        "componentStructure": 0.89,
+        "formDetail": 0.88,
+        "materialSurface": 0.87,
+        "lightingCamera": 0.86
+      },
+      "featureReviews": [
+        {
+          "id": "overall-silhouette",
+          "score": 0.88,
+          "visible": true,
+          "notes": "Silhouette matches rounded-box + disc"
+        },
+        {
+          "id": "cat-face-and-ears",
+          "score": 0.87,
+          "visible": true,
+          "notes": "Cat face bezel and ears with emissive pads visible - dark bezel + white eyes + pink inner pads"
+        },
+        {
+          "id": "headphone-earcups-badges",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Headband arch and earcups with silver rims and hexagon badges"
+        },
+        {
+          "id": "chest-bumper-ring-knobs-grilles",
+          "score": 0.86,
+          "visible": true,
+          "notes": "Concentric pink glowing chest ring + bumper knobs and twin silver grilles"
+        },
+        {
+          "id": "radio-wheels-stage",
+          "score": 0.85,
+          "visible": true,
+          "notes": "Radio module dual antennas, 4 black tires 6-spoke rims, pink/white stage disc"
+        }
+      ],
+      "action": "continue",
+      "summary": "Completed optimization-pass: triangle budget 180k target, draw calls 140 with instanced spokes and treads, textures 1024.",
+      "matched": [],
+      "mismatches": [],
+      "specFixes": [],
+      "codeFixes": [],
+      "evidence": [],
+      "mapStrippedRender": "render-optimization-pass.png",
+      "visualEvidence": {
+        "referenceScreenshot": "reference.png",
+        "renderScreenshot": "render-optimization-pass.png",
+        "comparisonImage": "cmp-optimization-pass.png",
+        "cameraView": "",
+        "notes": "",
+        "aiVisionNotes": ""
+      }
+    }
+  ],
+  "lodPlan": [
+    {
+      "tier": "near",
+      "distance": 0,
+      "strategy": "full component tree"
+    },
+    {
+      "tier": "far",
+      "distance": 30,
+      "strategy": "merge static"
+    }
+  ],
+  "performanceBudget": {
+    "qualityPriority": "reference-fidelity",
+    "targetTriangles": 180000,
+    "maxDrawCalls": 140,
+    "textureSize": 1024,
+    "fpsTarget": 60,
+    "optimizationPolicy": "Reach fidelity first then optimize"
+  },
+  "proceduralStrategy": [
+    "Block out chassis rounded-box and 5-ring stage platform",
+    "Build face bezel dark with emissive white cat eyes and caret mouth",
+    "Add triangular cat ears with hot-pink inner pads emissive",
+    "Add arching headband tube plus cylindrical earcups with silver rims and hexagon glowing badges",
+    "Add concentric pink emissive chest ring + speaker cone/dome + bumper knobs + twin silver grilles",
+    "Add right-side radio module box with 3 toggles and dual whip antennas with ball tips",
+    "Add 4 wheels with black rubber toruses and silver 6-spoke star rims with treads"
+  ],
+  "animationAnchors": [
+    "wheel rotation around X axis",
+    "headphone earcup pivot",
+    "antenna wiggle at base",
+    "chest pulse scale"
+  ],
+  "destructionAnchors": [
+    "detachable wheels",
+    "detachable radio module",
+    "detachable earcups"
+  ]
+}

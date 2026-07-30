@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pink Cat-Eared Cyber-Bot Vehicle - Procedural Three.js</title>
+<style>
+  body { margin: 0; overflow: hidden; background: #f5f0f3; font-family: system-ui, sans-serif; }
+  #info {
+    position: absolute; top: 12px; left: 12px; padding: 10px 14px;
+    background: rgba(255,255,255,0.88); border-radius: 12px; max-width: 360px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12); font-size: 13px; line-height: 1.4;
+  }
+  #info h1 { font-size: 15px; margin: 0 0 6px 0; }
+  #info code { font-size: 11px; }
+  #controls { position: absolute; top: 12px; right: 12px; display: flex; gap: 8px; flex-direction: column; }
+  button { padding: 8px 12px; border: 0; border-radius: 8px; background: #EE98B9; color: #2a1420; font-weight: 600; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  button:hover { background: #FF2A85; color: white; }
+  canvas { display: block; }
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<div id="info">
+  <h1>Pink Cat-Eared Cyber-Bot Vehicle</h1>
+  <div>Procedural Three.js factory <code>createCyberBotVehicleModel()</code></div>
+  <div>Hierarchy: root → stage-platform, chassis → face-screen, ears L/R, headphones, chest-ring, bumper, radio-module, wheels FL/FR/RL/RR</div>
+  <div>Materials: Pink #EE98B9 r0.35 clearcoat 0.2, Emissive #FF2A85/#FFF 2.2, Rims #D1D5DB m0.85 r0.22, Tires #1C1C1E r0.85</div>
+  <div id="stats"></div>
+</div>
+<div id="controls">
+  <button id="btn-explode">Explode / Assemble</button>
+  <button id="btn-drive">Drive Animation</button>
+  <button id="btn-pulse">Pulse Chest</button>
+  <button id="btn-wireframe">Wireframe</button>
+</div>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { createCyberBotVehicleModel, createCyberBotVehicleLights, frameCyberBotVehicleCamera } from './src/createCyberBotVehicleModel.ts';
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(innerWidth, innerHeight);
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.0;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+document.body.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xf5f0f3);
+
+const camera = new THREE.PerspectiveCamera(38, innerWidth/innerHeight, 0.1, 100);
+camera.position.set(2.2, 1.4, 2.0);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.target.set(0, 0.2, 0);
+
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+
+const lights = createCyberBotVehicleLights();
+scene.add(lights);
+
+// Ground contact shadow catcher
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(10,10), new THREE.ShadowMaterial({ opacity: 0.18 }));
+ground.rotation.x = -Math.PI/2;
+ground.position.y = -0.75;
+ground.receiveShadow = true;
+scene.add(ground);
+
+const model = createCyberBotVehicleModel({ castShadow: true, receiveShadow: true });
+scene.add(model);
+
+frameCyberBotVehicleCamera(camera, model);
+
+const { nodes, animations } = model.userData.sculptRuntime;
+console.log('SculptRuntime nodes', Object.keys(nodes));
+
+let exploded = false;
+let driveTime = 0;
+let driving = false;
+let pulsing = false;
+
+document.getElementById('btn-explode').onclick = () => {
+  exploded = !exploded;
+  const center = new THREE.Box3().setFromObject(model).getCenter(new THREE.Vector3());
+  Object.values(nodes).forEach((obj) => {
+    if (obj === model || obj.parent === null) return;
+    if (obj.name === 'root') return;
+    // simple scale about center
+    const dir = obj.getWorldPosition(new THREE.Vector3()).sub(center);
+    const target = exploded ? dir.normalize().multiplyScalar(dir.length()*1.35) : new THREE.Vector3();
+    // animate via GSAP-like lerp - quick tween
+    const startPos = obj.userData._origPos || obj.position.clone();
+    if (!obj.userData._origPos) obj.userData._origPos = startPos.clone();
+    // For explode, we move each top-level node away
+    if (obj.parent === nodes['chassis'] || obj.parent === model || obj === nodes['stage-platform'] || obj === nodes['chassis']) {
+      // move children of chassis outward?
+    }
+  });
+  // Simpler explode: scale chassis children outward
+  if (exploded) {
+    nodes['chassis'].children.forEach((c,i)=>{
+      if (c.userData._origPos) return;
+      c.userData._origPos = c.position.clone();
+      const dir = c.position.clone().normalize();
+      c.position.addScaledVector(dir, 0.35);
+    });
+  } else {
+    nodes['chassis'].children.forEach((c)=>{
+      if (c.userData._origPos) c.position.copy(c.userData._origPos);
+    });
+  }
+};
+
+document.getElementById('btn-drive').onclick = () => { driving = !driving; };
+document.getElementById('btn-pulse').onclick = () => { pulsing = !pulsing; };
+document.getElementById('btn-wireframe').onclick = () => {
+  model.traverse(o=>{ if(o.isMesh){ o.material.wireframe = !o.material.wireframe; }});
+};
+
+function animate(t){
+  requestAnimationFrame(animate);
+  const time = t*0.001;
+  if (driving) {
+    driveTime += 0.016;
+    animations.drive(time, driveTime*1.5);
+    // forward movement
+    model.position.z = Math.sin(driveTime*0.6)*0.2;
+  }
+  if (pulsing) {
+    animations.pulseChest(time);
+  }
+  controls.update();
+  renderer.render(scene, camera);
+}
+animate(0);
+
+window.addEventListener('resize',()=>{
+  camera.aspect = innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+
+document.getElementById('stats').textContent = `Components: ${Object.keys(nodes).length} | Triangles: ~${renderer.info.render.triangles}`;
+</script>
+</body>
+</html>
